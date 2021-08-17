@@ -11,7 +11,7 @@ function Sidebar() {
     setCollapsed(!collapsed);
   };
   return (
-    <div className="page">
+    <>
       {!collapsed ? (
         <div className="not-collapsed">
           <NotCollapsedIcon
@@ -33,7 +33,7 @@ function Sidebar() {
       <div className="language-div">
         <h2 className="language-text">Eng</h2>
       </div>
-    </div>
+    </>
   );
 }
 export default Sidebar;

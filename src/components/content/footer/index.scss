@@ -1,0 +1,13 @@
+.footer-text {
+    display: inline-block;
+    color: var(--main-dark-gray);
+}
+.number {
+    float: right;
+}
+
+@media (max-width: 767px) {
+    .footer-text {
+        float: right;
+    }
+}

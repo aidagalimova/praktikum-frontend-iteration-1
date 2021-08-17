@@ -1,9 +1,27 @@
 @import "vars";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
-.App {
-  text-align: center;
+.app {
   .page {
     min-height: 100vh;
+  }
+  .btn {
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    position: inherit;
+    background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
+    background-blend-mode: darken;
+    &:hover {
+      filter: brightness(90%);
+    }
+    &:active {
+      filter: brightness(80%);
+    }
+    .btn-text {
+      font-size: 18px;
+      color: white;
+      margin-top: 0.3em;
+    }
   }
 }

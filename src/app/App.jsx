@@ -1,10 +1,14 @@
 import React from "react";
 import "antd/dist/antd.css";
 import "./App.scss";
-import Sidebar from "../components/sidebar";
+import MainPage from "../pages/main-page";
 
 function App() {
-  return <Sidebar />;
+  return (
+    <div className="app">
+      <MainPage />
+    </div>
+  );
 }
 
 export default App;
