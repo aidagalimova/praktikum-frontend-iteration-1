@@ -2,7 +2,7 @@ import React from "react";
 import { Layout } from "antd";
 import Sidebar from "../../components/sidebar";
 import "./index.scss";
-import MainPageContent from "../../components/content";
+import MainPageContent from "../../components/main-page-content";
 
 const { Content, Sider } = Layout;
 function MainPage() {

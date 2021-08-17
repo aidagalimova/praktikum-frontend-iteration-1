@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Layout } from "antd";
-import MainPageHeader from "./header";
-import MainPageFooter from "./footer";
+import MainPageHeader from "../header";
+import MainPageFooter from "../footer";
 import "./index.scss";
 
 const { Header, Content, Footer } = Layout;
