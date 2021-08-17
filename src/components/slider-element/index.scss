@@ -1,0 +1,31 @@
+.slider-element {
+    height: 100vh;
+    //  background-color: lightcoral;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    .left-arrow {
+        margin-top: 48vh !important;
+        margin-left: 28px;
+    }
+    .right-arrow {
+        margin-top: 48vh !important;
+        margin-right: 28px;
+        float: right;
+    }
+    .text-div {
+        margin-left: 96px;
+        margin-right: 97px;
+        padding-top: 277px;
+        .name {
+            font-size: 40px;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 0em;
+        }
+        .discription {
+            font-size: 24px;
+            font-weight: 300;
+            color: white;
+        }
+    }
+}

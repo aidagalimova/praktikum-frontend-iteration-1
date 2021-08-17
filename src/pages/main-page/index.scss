@@ -2,6 +2,10 @@
     .sider {
         width: 64px;
     }
+    .content {
+        width: 560px !important;
+        flex: auto 0 0;
+    }
 }
 
 @media (max-width: 767px) {
