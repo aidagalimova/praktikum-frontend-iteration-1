@@ -1,8 +1,8 @@
 .slider-element {
     height: 100vh;
-    //  background-color: lightcoral;
     background-repeat: no-repeat;
     background-size: 100%;
+    -webkit-background-size: cover;
     .left-arrow {
         margin-top: 48vh !important;
         margin-left: 28px;
@@ -27,5 +27,40 @@
             font-weight: 300;
             color: white;
         }
+        .btn {
+            border-radius: 4px;
+            height: 48px;
+        }
+        .btn-1 {
+            background: linear-gradient(90deg, #13493f 0%, #0c7b1b 100%);
+        }
+        .btn-2 {
+            background: linear-gradient(90deg, #132949 0%, #0c7b67 100%);
+        }
+        .btn-3 {
+            background: linear-gradient(90deg, #493013 0%, #7b0c3b 100%);
+        }
+        .btn-4 {
+            background: linear-gradient(90deg, #281349 0%, #720c7b 100%);
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .slider-element {
+        .text-div {
+            padding-top: 240px;
+            .name {
+                font-size: 32px;
+            }
+            .discription {
+                font-size: 22px;
+            }
+        }
+    }
+}
+@media (max-width: 1023px) {
+    .slider-element {
+        display: none;
     }
 }
