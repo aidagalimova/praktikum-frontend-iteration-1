@@ -1,0 +1,33 @@
+.sidebar-els-div {
+    margin-left: 128px;
+    margin-top: 275px;
+    .sidebar-els-text {
+        color: #ffffff;
+        font-weight: 500;
+        font-size: 32px;
+        cursor: pointer;
+        margin-bottom: 0.2em;
+    }
+    .sidebar-els-text:hover {
+        color: var(--main-accent);
+    }
+    .icons-div {
+        margin-top: 32px;
+        .icon {
+            cursor: pointer;
+        }
+        .center {
+            margin-left: 24px;
+            margin-right: 24px;
+        }
+        .icon:hover {
+            fill: var(--main-accent);
+        }
+    }
+}
+@media (max-width: 767px) {
+    .sidebar-els-div {
+        margin-left: 28px;
+        margin-top: 48px;
+    }
+}
