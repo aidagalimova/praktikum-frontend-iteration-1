@@ -1,13 +1,29 @@
 .footer-text {
     display: inline-block;
     color: var(--main-dark-gray);
+    font-weight: 400;
+    font-size: 13px;
 }
+
 .number {
     float: right;
+    font-weight: 400;
+    font-size: 13px;
 }
 
 @media (max-width: 767px) {
-    .footer-text {
-        float: right;
+    .text-div {
+        clear: right;
+        margin-right: 16px;
+        .footer-text {
+            color: var(--main-light-gray);
+            float: right;
+        }
+    }
+    .number {
+        padding-top: 8px;
+        color: var(--main-accent);
+        margin-bottom: 0.4em;
+        margin-right: 16px;
     }
 }

@@ -4,7 +4,7 @@ import "./index.scss";
 
 function MainPageHeader() {
   return (
-    <div>
+    <div className="header-div">
       <h1 className="header-name">Need for drive</h1>
       <div className="city-div">
         <MapIcon className="map-icon" />

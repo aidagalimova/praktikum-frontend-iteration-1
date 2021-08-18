@@ -39,8 +39,29 @@
     z-index: 15;
     height: 100vh;
 }
+.ant-layout-sider {
+    background: white !important;
+    flex: 0 !important;
+    min-width: 128px !important;
+}
+
 @media (max-width: 1023px) {
     .background {
         background: var(--main-black);
+    }
+}
+
+@media (max-width: 767px) {
+    .collapsed {
+        background: none;
+    }
+    .sidebar-icon {
+        margin-top: 16px;
+    }
+    .collapsed-icon {
+        stroke: var(--main-black);
+    }
+    .ant-layout-sider {
+        min-width: 16px !important;
     }
 }

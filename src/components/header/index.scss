@@ -1,28 +1,36 @@
-.header-name {
-    font-weight: bold;
-    font-size: 30px;
-    color: var(--main-accent);
-    display: inline-block;
-}
-.city-div {
-    float: right;
-    .city {
-        display: inline-block;
-        color: var(--main-dark-gray);
-        cursor: pointer;
-    }
-    .map-icon {
-        display: inline-block;
-        margin-right: 8px;
-        cursor: pointer;
-    }
-}
-
-@media (max-width: 767px) {
+.header-div {
     .header-name {
-        float: right;
+        font-weight: bold;
+        font-size: 30px;
+        color: var(--main-accent);
+        display: inline-block;
     }
     .city-div {
         float: right;
+        .city {
+            display: inline-block;
+            color: var(--main-dark-gray);
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .map-icon {
+            display: inline-block;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+    }
+}
+@media (max-width: 767px) {
+    .header-div {
+        margin-top: -16px;
+        .header-name {
+            float: right;
+            margin-right: -48px;
+        }
+        .city-div {
+            clear: right;
+            margin-right: -48px;
+            margin-top: -40px;
+        }
     }
 }

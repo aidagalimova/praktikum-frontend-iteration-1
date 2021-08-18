@@ -10,7 +10,6 @@ function Sidebar() {
   const [collapsed, setCollapsed] = useState(true);
   useEffect(() => {
     if (document.getElementsByClassName("background").length !== 0) {
-      console.log("aaa");
       document.getElementsByClassName(
         "background"
       )[0].style.width = `${window.innerWidth}px`;
@@ -20,11 +19,11 @@ function Sidebar() {
     setCollapsed(!collapsed);
   };
   return (
-    <Sider>
+    <Sider className="sider">
       {collapsed ? (
         <div className="collapsed">
           <CollapsedIcon
-            className="sidebar-icon"
+            className="sidebar-icon collapsed-icon"
             onClick={toggleCollapsed}
             stroke="white"
           />
