@@ -15,9 +15,11 @@ function Sidebar() {
       )[0].style.width = `${window.innerWidth}px`;
     }
   });
+  
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
+
   return (
     <Sider className="sider">
       {collapsed ? (

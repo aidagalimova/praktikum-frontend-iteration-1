@@ -1,30 +1,32 @@
 .main-page-content {
     background-color: white !important;
     height: 100vh;
-    width: 560px;
     .header {
-        margin-right: 64px;
         margin-top: 16px;
+        margin-right: 64px;
     }
     .content {
-        margin-top: 157px;
+        margin-top: 144px;
         height: 100%;
         .text {
             font-size: 70px;
             font-weight: bold;
-            margin-bottom: -40px;
+            line-height: 65px;
+            margin-bottom: 4px;
         }
         .name-text {
             font-size: 70px;
             font-weight: bold;
             color: var(--main-accent);
-            margin-bottom: 0;
+            margin-bottom: 32px;
+            line-height: 65px;
         }
         .discription-text {
             font-size: 26px;
             font-weight: 300;
             color: var(--main-dark-gray);
-            margin-bottom: 50px;
+            margin-bottom: 56px;
+            line-height: 30px;
         }
         .btn {
             width: 250px;
@@ -45,26 +47,19 @@
 @media (max-width: 767px) {
     .main-page-content {
         .content {
-            margin-top: 112px;
+            margin-top: 32px;
             .text {
                 font-size: 32px;
-                font-weight: bold;
                 margin-bottom: -16px;
             }
             .name-text {
                 font-size: 32px;
-                font-weight: bold;
-                color: var(--main-accent);
-                margin-bottom: 0;
             }
             .discription-text {
                 font-size: 18px;
-                font-weight: 300;
-                color: var(--main-dark-gray);
-                margin-bottom: 50px;
+                margin-bottom: 32px;
             }
             .btn {
-                height: 48px;
                 border-radius: 0px;
                 width: -webkit-fill-available;
                 margin-left: -16px;
@@ -72,10 +67,8 @@
             }
         }
         .footer {
-            //  margin-right: 16px;
-            //  margin-bottom: 24px;
             z-index: 5;
-            background-color: var(--main-black) !important;
+            background-color: var(--nav-el-black) !important;
             margin-bottom: 0px;
             height: 72px;
             width: calc(100% + 16px);
@@ -87,5 +80,16 @@
 @media (max-width: 1023px) {
     .main-page-content {
         width: 100%;
+    }
+}
+
+@media (max-width: 1439px) {
+    .main-page-content {
+        .footer {
+            margin-right: 32px;
+        }
+        .header {
+            margin-right: 32px;
+        }
     }
 }

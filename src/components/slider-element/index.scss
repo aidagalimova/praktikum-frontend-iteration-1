@@ -5,31 +5,35 @@
     -webkit-background-size: cover;
     .left-arrow {
         margin-top: 48vh !important;
-        margin-left: 28px;
+        margin-left: 24px;
     }
     .right-arrow {
         margin-top: 48vh !important;
-        margin-right: 28px;
+        margin-right: 24px;
         float: right;
     }
     .text-div {
-        margin-left: 96px;
-        margin-right: 97px;
-        padding-top: 277px;
+        margin-left: 64px;
+        margin-right: 64px;
+        padding-top: 240px;
         .name {
             font-size: 40px;
             font-weight: 500;
             color: white;
-            margin-bottom: 0em;
+            margin-bottom: 8px;
+            line-height: 100%;
         }
         .discription {
             font-size: 24px;
             font-weight: 300;
             color: white;
+            line-height: 22px;
+            margin-bottom: 32px;
         }
         .btn {
             border-radius: 4px;
             height: 48px;
+            width: 164px;
         }
         .btn-1 {
             background: linear-gradient(90deg, #13493f 0%, #0c7b1b 100%);
@@ -49,13 +53,21 @@
 @media (max-width: 1400px) {
     .slider-element {
         .text-div {
-            padding-top: 240px;
+            padding-top: 280px;
+            margin-left: 40px;
+            margin-right: 40px;
             .name {
                 font-size: 32px;
             }
             .discription {
                 font-size: 22px;
             }
+        }
+        .left-arrow {
+            margin-left: 12px;
+        }
+        .right-arrow {
+            margin-right: 12px;
         }
     }
 }

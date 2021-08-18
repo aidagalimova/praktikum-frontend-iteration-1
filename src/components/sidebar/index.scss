@@ -7,7 +7,7 @@
     stroke: var(--main-accent);
 }
 .collapsed {
-    background-color: var(--main-black);
+    background-color: var(--nav-el-black);
     width: 64px;
     min-height: 100vh;
 }
@@ -24,7 +24,7 @@
     }
 }
 .not-collapsed {
-    background-color: var(--main-black);
+    background-color: #111518;
     width: 752px;
     min-height: 100vh;
     position: absolute;
@@ -44,9 +44,21 @@
     min-width: 128px !important;
 }
 
+@media (max-width: 1439px) {
+    .ant-layout-sider {
+        min-width: 96px !important;
+    }
+    .not-collapsed {
+        width: 617px;
+    }
+}
+
 @media (max-width: 1023px) {
     .background {
-        background: var(--main-black);
+        background: #111518;
+    }
+    .ant-layout-sider {
+        min-width: 128px !important;
     }
 }
 

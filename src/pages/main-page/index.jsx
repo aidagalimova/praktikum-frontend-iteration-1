@@ -10,7 +10,7 @@ const { Content } = Layout;
 const sliderElements = [
   {
     id: 1,
-    name: "Бесплатный парковка",
+    name: "Бесплатная парковка",
     discription: `Оставляйте машину на платных городских парковках и разрешенных местах, 
     не нарушая ПДД, а также в аэропортах`,
   },
@@ -40,7 +40,7 @@ function MainPage() {
           <MainPageContent />
         </Content>
         <Content className="slider">
-          <SliderElement el={sliderElements[3]} />
+          <SliderElement el={sliderElements[0]} />
         </Content>
       </Layout>
     </div>
