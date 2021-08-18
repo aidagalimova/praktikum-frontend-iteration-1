@@ -10,7 +10,6 @@
     background-color: var(--main-black);
     width: 64px;
     min-height: 100vh;
-    // position: relative;
 }
 .language-div {
     bottom: 0;
@@ -35,9 +34,9 @@
 .background {
     width: 0px;
     background: rgba(21, 27, 31, 0.81);
-    position: absolute;
     z-index: 15;
     height: 100vh;
+    position: fixed;
 }
 .ant-layout-sider {
     background: white !important;
