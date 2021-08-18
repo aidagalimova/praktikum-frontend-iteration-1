@@ -7,6 +7,11 @@
         flex: auto 0 0;
     }
 }
+.ant-layout-sider {
+    background: white !important;
+    flex: 0 !important;
+    min-width: 128px !important;
+}
 
 @media (max-width: 767px) {
     .page {
@@ -15,8 +20,10 @@
         }
     }
 }
-.ant-layout-sider {
-    background: white !important;
-    flex: 0 !important;
-    min-width: 128px !important;
+@media (max-width: 1023px) {
+    .page {
+        .content {
+            width: 100% !important;
+        }
+    }
 }

@@ -5,7 +5,7 @@ import "./index.scss";
 import MainPageContent from "../../components/main-page-content";
 import SliderElement from "../../components/slider-element";
 
-const { Content, Sider } = Layout;
+const { Content } = Layout;
 
 const sliderElements = [
   {
@@ -35,9 +35,7 @@ function MainPage() {
   return (
     <div className="page">
       <Layout>
-        <Sider className="sider">
-          <Sidebar />
-        </Sider>
+        <Sidebar />
         <Content className="content">
           <MainPageContent />
         </Content>
