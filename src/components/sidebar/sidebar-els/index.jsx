@@ -1,7 +1,7 @@
 import React from "react";
-import { ReactComponent as FacebookIcon } from "./svg/facebook.svg";
-import { ReactComponent as InstagramIcon } from "./svg/instagram.svg";
-import { ReactComponent as TelegramIcon } from "./svg/telegram.svg";
+import { ReactComponent as FacebookIcon } from "../../../assets/svg/facebook.svg";
+import { ReactComponent as InstagramIcon } from "../../../assets/svg/instagram.svg";
+import { ReactComponent as TelegramIcon } from "../../../assets/svg/telegram.svg";
 import "./index.scss";
 
 function SidebarEls() {

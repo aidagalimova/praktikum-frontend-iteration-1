@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Button } from "antd";
-import { ReactComponent as RightArrow } from "./svg/right.svg";
-import { ReactComponent as LeftArrow } from "./svg/left.svg";
+import { ReactComponent as RightArrow } from "../../assets/svg/right.svg";
+import { ReactComponent as LeftArrow } from "../../assets/svg/left.svg";
 import "./index.scss";
 
 function SliderElement({ el }) {
@@ -9,7 +9,7 @@ function SliderElement({ el }) {
     <div
       className="slider-element"
       style={{
-        backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url(/img/sliderImg${el.id}.png)`,
+        backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url(${el.img})`,
       }}
     >
       <Row>

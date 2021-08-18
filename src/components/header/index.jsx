@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as MapIcon } from "./svg/map.svg";
+import { ReactComponent as MapIcon } from "../../assets/svg/map.svg";
 import "./index.scss";
 
 function MainPageHeader() {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Layout } from "antd";
-import { ReactComponent as CollapsedIcon } from "./svg/collapsed.svg";
-import { ReactComponent as NotCollapsedIcon } from "./svg/not-collapsed.svg";
+import { ReactComponent as CollapsedIcon } from "../../assets/svg/collapsed.svg";
+import { ReactComponent as NotCollapsedIcon } from "../../assets/svg/not-collapsed.svg";
 import "./index.scss";
 import SidebarEls from "./sidebar-els";
 
@@ -15,7 +15,7 @@ function Sidebar() {
       )[0].style.width = `${window.innerWidth}px`;
     }
   });
-  
+
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
   };
