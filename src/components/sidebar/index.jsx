@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Layout } from "antd";
 import { ReactComponent as CollapsedIcon } from "../../assets/svg/collapsed.svg";
 import { ReactComponent as NotCollapsedIcon } from "../../assets/svg/not-collapsed.svg";
+import { ReactComponent as Ellipse } from "../../assets/svg/ellipse.svg";
 import "./index.scss";
 import SidebarEls from "./sidebar-els";
-import LanguageSelector from "./language-selector";
 
 const { Sider } = Layout;
 function Sidebar() {
@@ -37,7 +37,10 @@ function Sidebar() {
           <div className="background" />
         </>
       )}
-      <LanguageSelector />
+      <div className={collapsed ? "language-div" : "language-div formobile"}>
+        <Ellipse className="ellipse" />
+        <h2 className="language-text bold">Eng</h2>
+      </div>
     </Sider>
   );
 }
