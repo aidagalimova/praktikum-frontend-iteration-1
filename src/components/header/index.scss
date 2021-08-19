@@ -1,36 +1,33 @@
 .header-div {
-    .header-name {
+    display: flex;
+    .name {
+        flex: 1;
         font-weight: bold;
         font-size: 30px;
         color: var(--main-accent);
-        display: inline-block;
     }
     .city-div {
-        float: right;
+        display: flex;
+        align-items: center;
         .city {
-            display: inline-block;
             color: var(--main-dark-gray);
             cursor: pointer;
             font-size: 14px;
         }
         .map-icon {
-            display: inline-block;
-            margin-right: 8px;
+            margin-top: -8px;
             cursor: pointer;
+            margin-right: 8px;
         }
     }
 }
 @media (max-width: 767px) {
     .header-div {
         margin-top: -16px;
-        .header-name {
-            float: right;
-            margin-right: -16px;
-        }
-        .city-div {
-            clear: right;
-            margin-top: -40px;
-            margin-right: -16px;
+        flex-direction: column;
+        align-items: flex-end;
+        .name {
+            margin-bottom: -28px
         }
     }
 }
