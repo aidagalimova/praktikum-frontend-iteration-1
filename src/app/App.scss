@@ -1,5 +1,4 @@
 @import "vars";
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 .app {
   .page {
@@ -23,5 +22,18 @@
       color: white;
       margin-top: 0.3em;
     }
+  }
+
+  .bold {
+    font-family: "RobotoBold";
+  }
+  .medium {
+    font-family: "RobotoMedium";
+  }
+  .regular {
+    font-family: "RobotoRegular";
+  }
+  .light {
+    font-family: "RobotoLight";
   }
 }

@@ -5,10 +5,10 @@ import "./index.scss";
 function MainPageHeader() {
   return (
     <div className="header-div">
-        <h1 className="name">Need for drive</h1>
+        <h1 className="name bold">Need for drive</h1>
       <div className="city-div">
         <MapIcon className="map-icon" />
-        <h3 className="city">Ульяновск</h3>
+        <h3 className="city regular">Ульяновск</h3>
       </div>
     </div>
   );

@@ -7,10 +7,10 @@ import "./index.scss";
 function SidebarEls() {
   return (
     <div className="sidebar-els-div">
-      <h1 className="sidebar-els-text">ПАРКОВКА</h1>
-      <h1 className="sidebar-els-text">СТРАХОВКА</h1>
-      <h1 className="sidebar-els-text">БЕНЗИН</h1>
-      <h1 className="sidebar-els-text">ОБСЛУЖИВАНИЕ</h1>
+      <h1 className="sidebar-els-text medium">ПАРКОВКА</h1>
+      <h1 className="sidebar-els-text medium">СТРАХОВКА</h1>
+      <h1 className="sidebar-els-text medium">БЕНЗИН</h1>
+      <h1 className="sidebar-els-text medium">ОБСЛУЖИВАНИЕ</h1>
       <div className="icons-div">
         <TelegramIcon className="icon 1" fill="white" />
         <FacebookIcon className="icon 2 center" fill="white" />

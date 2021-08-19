@@ -12,13 +12,13 @@ function MainPageContent() {
         <MainPageHeader />
       </Header>
       <Content className="content">
-        <h1 className="text">Каршеринг</h1>
-        <h1 className="name-text">Need for drive</h1>
-        <h3 className="discription-text">
+        <h1 className="text bold">Каршеринг</h1>
+        <h1 className="name-text bold">Need for drive</h1>
+        <h3 className="discription-text light">
           Поминутная аренда авто твоего города
         </h3>
         <Button className="btn">
-          <h1 className="btn-text">Забронировать</h1>
+          <h1 className="btn-text medium">Забронировать</h1>
         </Button>
       </Content>
       <Footer className="footer">

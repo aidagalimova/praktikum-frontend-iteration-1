@@ -17,10 +17,10 @@ function SliderElement({ el }) {
         </Col>
         <Col span={22}>
           <div className="text-div">
-            <h1 className="name">{el.name}</h1>
-            <h3 className="discription">{el.discription}</h3>
+            <h1 className="name medium">{el.name}</h1>
+            <h3 className="discription light">{el.discription}</h3>
             <Button className={`btn btn-${el.id}`}>
-              <h3 className="btn-text">Подбробнее </h3>
+              <h3 className="btn-text medium">Подбробнее </h3>
             </Button>
           </div>
         </Col>

@@ -46,7 +46,7 @@ function Sidebar() {
       )}
       <div className="language-div">
         <Ellipse className="ellipse" />
-        <h2 className="language-text">Eng</h2>
+        <h2 className="language-text bold">Eng</h2>
       </div>
     </Sider>
   );
