@@ -1,0 +1,25 @@
+.language-div {
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 32px;
+    margin-left: 20px;
+    .language-text {
+        font-size: 13px;
+        color: var(--main-accent);
+        cursor: pointer;
+    }
+    &:hover .ellipse {
+        display: block;
+    }
+    &:hover .language-text {
+        color: var(--main-light-gray);
+    }
+    &:active .language-text {
+        color: var(--main-accent);
+    }
+    .ellipse {
+        margin-left: -13px;
+        margin-bottom: -36px;
+        display: none;
+    }
+}
