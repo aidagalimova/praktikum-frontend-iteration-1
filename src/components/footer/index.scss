@@ -8,6 +8,10 @@
     .number-div {
         .number {
             font-size: 13px;
+            color: var(--main-black);
+            &:hover {
+                color: var(--main-accent);
+            }
         }
     }
 }
@@ -23,8 +27,13 @@
             position: absolute;
             margin-top: 24px;
         }
-        .number {
-            color: var(--main-accent);
+        .number-div {
+            .number {
+                color: var(--main-accent);
+                &:hover {
+                    color: var(--main-light-gray);
+                }
+            }
         }
     }
 }
