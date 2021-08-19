@@ -2,9 +2,9 @@
     margin-left: 16px;
     margin-top: 32px;
     cursor: pointer;
-}
-.sidebar-icon:hover {
-    stroke: var(--main-accent);
+    &:hover {
+        stroke: var(--main-accent);
+    }
 }
 .collapsed {
     background-color: var(--nav-el-black);
@@ -14,13 +14,27 @@
 .language-div {
     bottom: 0;
     position: absolute;
+    margin-bottom: 32px;
+    margin-left: 20px;
     .language-text {
-        font-size: 18px;
+        font-size: 13px;
         color: var(--main-accent);
         font-weight: bold;
-        margin-left: 16px;
-        margin-bottom: 32px;
         cursor: pointer;
+    }
+    &:hover .ellipse {
+        display: block;
+    }
+    &:hover .language-text {
+        color: var(--main-light-gray);
+    }
+    &:active .language-text {
+        color: var(--main-accent);
+    }
+    .ellipse {
+        margin-left: -13px;
+        margin-bottom: -36px;
+        display: none;
     }
 }
 .not-collapsed {

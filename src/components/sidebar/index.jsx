@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Layout } from "antd";
 import { ReactComponent as CollapsedIcon } from "../../assets/svg/collapsed.svg";
 import { ReactComponent as NotCollapsedIcon } from "../../assets/svg/not-collapsed.svg";
+import { ReactComponent as Ellipse } from "../../assets/svg/ellipse.svg";
 import "./index.scss";
 import SidebarEls from "./sidebar-els";
 
@@ -44,6 +45,7 @@ function Sidebar() {
         </>
       )}
       <div className="language-div">
+        <Ellipse className="ellipse" />
         <h2 className="language-text">Eng</h2>
       </div>
     </Sider>
