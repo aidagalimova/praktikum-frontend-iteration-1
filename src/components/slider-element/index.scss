@@ -19,7 +19,7 @@
     .text-div {
         margin-left: 32px;
         margin-right: 32px;
-        padding-top: 240px;
+        padding-top: 32vh;
         .name {
             font-size: 40px;
             color: white;
@@ -55,7 +55,6 @@
 @media (max-width: 1400px) {
     .slider-element {
         .text-div {
-            padding-top: 280px;
             margin-left: 32px;
             margin-right: 32px;
             .name {
