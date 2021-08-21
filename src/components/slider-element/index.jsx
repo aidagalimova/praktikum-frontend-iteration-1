@@ -3,7 +3,7 @@ import { Button } from "antd";
 import { ReactComponent as Arrow } from "../../assets/svg/arrow.svg";
 import "./index.scss";
 
-function SliderElement({ el }) {
+function SliderElement({ el, next, prev }) {
   return (
     <div
       className="slider-element"
@@ -11,7 +11,7 @@ function SliderElement({ el }) {
         backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%), url(${el.img})`,
       }}
     >
-      <div className="arrow">
+      <div className="arrow" onClick={prev} aria-hidden="true">
         <Arrow className="arrow-icon" />
       </div>
       <div className="text-div">
@@ -21,11 +21,8 @@ function SliderElement({ el }) {
           <h3 className="btn-text medium">Подбробнее </h3>
         </Button>
       </div>
-      <div className="arrow">
-        <Arrow
-          className="arrow-icon"
-          transform="scale(-1, 1)"
-        />
+      <div className="arrow" onClick={next} aria-hidden="true">
+        <Arrow className="arrow-icon" transform="scale(-1, 1)" />
       </div>
     </div>
   );

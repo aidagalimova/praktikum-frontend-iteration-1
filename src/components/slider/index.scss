@@ -1,0 +1,13 @@
+.slider { z-index: 5;
+    .dot {
+        margin-right: 8px;
+        fill: #eeeeee;
+        cursor: pointer;
+        &-1,
+        &-2,
+        &-3,
+        &-4 {
+            fill: var(--main-accent);
+        }
+    }
+}
