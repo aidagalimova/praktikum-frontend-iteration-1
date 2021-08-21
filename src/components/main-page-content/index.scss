@@ -1,0 +1,95 @@
+.main-page-content {
+    background-color: white !important;
+    height: 100vh;
+    .header {
+        margin-top: 16px;
+        margin-right: 64px;
+    }
+    .content {
+        margin-top: 21vh;
+        height: 100%;
+        .text {
+            font-size: 70px;
+            line-height: 65px;
+            margin-bottom: 4px;
+        }
+        .name-text {
+            font-size: 70px;
+            color: var(--main-accent);
+            margin-bottom: 32px;
+            line-height: 65px;
+        }
+        .discription-text {
+            font-size: 26px;
+            color: var(--main-dark-gray);
+            margin-bottom: 56px;
+            line-height: 30px;
+        }
+        .btn {
+            width: 250px;
+            height: 48px;
+        }
+    }
+    .footer {
+        margin-right: 64px;
+        margin-bottom: 24px;
+    }
+}
+.ant-layout-header,
+.ant-layout-footer {
+    background-color: white !important;
+    padding: 0 !important;
+}
+
+@media (max-width: 767px) {
+    .main-page-content {
+        .content {
+            margin-top: 32px;
+            .text {
+                font-size: 32px;
+                line-height: 32px;
+            }
+            .name-text {
+                font-size: 32px;
+                line-height: 32px;
+                margin-bottom: 16px;
+            }
+            .discription-text {
+                font-size: 18px;
+                line-height: 21px;
+                margin-bottom: 32px;
+            }
+            .btn {
+                border-radius: 0px;
+                width: -webkit-fill-available;
+                margin-left: -16px;
+                position: fixed;
+            }
+        }
+        .footer {
+            z-index: 5;
+            background-color: var(--nav-el-black) !important;
+            margin-bottom: 0px;
+            height: 72px;
+            width: calc(100% + 16px);
+            margin-left: -16px;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .main-page-content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1439px) {
+    .main-page-content {
+        .header {
+            margin-right: 32px;
+        }
+        .footer {
+            margin-right: 32px;
+        }
+    }
+}
