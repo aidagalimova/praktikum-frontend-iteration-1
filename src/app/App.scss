@@ -1,3 +1,39 @@
-.App {
-  text-align: center;
+@import "vars";
+
+.app {
+  .page {
+    min-height: 100vh;
+  }
+  .btn {
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    position: inherit;
+    background: linear-gradient(90deg, #0ec261 2.61%, #039f67 112.6%);
+    background-blend-mode: darken;
+    &:hover {
+      filter: brightness(90%);
+    }
+    &:active {
+      filter: brightness(80%);
+    }
+    &-text {
+      font-size: 18px;
+      color: white;
+      margin-top: 0.3em;
+    }
+  }
+
+  .bold {
+    font-family: "RobotoBold";
+  }
+  .medium {
+    font-family: "RobotoMedium";
+  }
+  .regular {
+    font-family: "RobotoRegular";
+  }
+  .light {
+    font-family: "RobotoLight";
+  }
 }
