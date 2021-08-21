@@ -48,7 +48,6 @@ function Slider() {
   };
 
   const next = () => {
-    carousel.current.next();
     if (slideNum === 4) {
       setSlideNum(1);
       carousel.current.next();
