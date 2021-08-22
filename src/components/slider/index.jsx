@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useRef, useState } from "react";
 import { Carousel } from "antd";
 import SliderElement from "../slider-element";
