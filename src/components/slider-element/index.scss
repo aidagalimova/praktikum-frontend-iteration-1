@@ -5,20 +5,9 @@
     background-repeat: no-repeat;
     background-size: 100%;
     -webkit-background-size: cover;
-    .arrow {
-        flex: 64px;
-        text-align: center;
-        &-icon {
-            margin-top: 48vh;
-        }
-        &:hover {
-            background: rgba(14, 194, 97, 0.2);
-            cursor: pointer;
-        }
-    }
     .text-div {
-        margin-left: 32px;
-        margin-right: 32px;
+        margin-left: 96px;
+        margin-right: 96px;
         padding-top: 32vh;
         flex: 200;
         .name {
@@ -56,8 +45,8 @@
 @media (max-width: 1400px) {
     .slider-element {
         .text-div {
-            margin-left: 32px;
-            margin-right: 32px;
+            margin-left: 64px;
+            margin-right: 64px;
             .name {
                 font-size: 32px;
             }

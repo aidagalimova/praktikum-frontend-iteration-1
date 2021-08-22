@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useRef, useState } from "react";
 import { Carousel } from "antd";
 import SliderElement from "../slider-element";
 import { ReactComponent as Dot } from "../../assets/svg/dot.svg";
+import { ReactComponent as Arrow } from "../../assets/svg/arrow.svg";
 import slider1 from "../../assets/image/sliderImg1.png";
 import slider2 from "../../assets/image/sliderImg2.png";
 import slider3 from "../../assets/image/sliderImg3.png";
@@ -50,20 +52,18 @@ function Slider() {
   const next = () => {
     if (slideNum === 4) {
       setSlideNum(1);
-      carousel.current.next();
     } else {
       setSlideNum((p) => p + 1);
-      carousel.current.next();
     }
+    carousel.current.next();
   };
   const prev = () => {
     if (slideNum === 1) {
       setSlideNum(4);
-      carousel.current.prev();
     } else {
       setSlideNum((p) => p - 1);
-      carousel.current.prev();
     }
+    carousel.current.prev();
   };
 
   const DotEl = ({ num }) => (
@@ -82,13 +82,34 @@ function Slider() {
     </ul>
   );
 
+  const NextArrow = (props) => {
+    const { className } = props;
+    return (
+      <div className={`${className} next`} onClick={next} aria-hidden="true">
+        <Arrow className="next-icon" transform="scale(-1, 1)" />
+      </div>
+    );
+  };
+
+  const PrevArrow = (props) => {
+    const { className } = props;
+    return (
+      <div className={`${className} prev`} onClick={prev} aria-hidden="true">
+        <Arrow className="prev-icon" />
+      </div>
+    );
+  };
+
   return (
-    <div>
+    <div className="slider">
       <Carousel
         appendDots={appendDots}
         ref={carousel}
         swipe={false}
         accessibility={false}
+        arrows
+        nextArrow={<NextArrow />}
+        prevArrow={<PrevArrow />}
       >
         <SliderElement el={sliderElements[0]} next={next} prev={prev} />
         <SliderElement el={sliderElements[1]} next={next} prev={prev} />

@@ -1,4 +1,5 @@
-.slider { z-index: 5;
+.slider {
+    z-index: 5;
     .dot {
         margin-right: 8px;
         fill: #eeeeee;
@@ -9,5 +10,55 @@
         &-4 {
             fill: var(--main-accent);
         }
+    }
+}
+.next {
+    right: 0px !important;
+    width: 64px !important;
+    top: 0px !important;
+    height: 101vh !important;
+    &-icon {
+        margin-left: 27px;
+        margin-top: 48vh;
+    }
+    &:hover {
+        background: rgba(14, 194, 97, 0.2) !important;
+        cursor: pointer;
+    }
+}
+.prev {
+    left: 0px !important;
+    z-index: 1;
+    width: 64px !important;
+    height: 101vh !important;
+    top: 0px !important;
+    &-icon {
+        margin-left: 27px;
+        margin-top: 48vh;
+    }
+    &:hover {
+        background: rgba(14, 194, 97, 0.2) !important;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 1400px) {
+    .next {
+        width: 32px !important;
+        &-icon {
+            margin-left: 11px;
+        }
+    }
+    .prev {
+        width: 32px !important;
+        &-icon {
+            margin-left: 11px;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .slider {
+        display: none;
     }
 }
