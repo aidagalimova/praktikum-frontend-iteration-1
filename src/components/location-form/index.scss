@@ -1,0 +1,40 @@
+.city-item {
+    margin-bottom: 4px;
+    margin-top: 32px;
+    margin-left: 46px;
+
+    .cross-icon {
+        cursor: pointer;
+        &:hover {
+            fill: var(--main-accent);
+        }
+    }
+}
+.point-item {
+    margin-bottom: 32px;
+}
+.input {
+    border-bottom: thin solid var(--main-dark-gray) !important;
+    border-radius: 0px;
+    max-width: 224px;
+}
+.ant-form-item-label {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 16px;
+    letter-spacing: 0em;
+    color: var(--main-black);
+}
+.ant-form-item-label > label::after {
+    content: "";
+}
+.map-text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 16px;
+    letter-spacing: 0em;
+    color: var(--main-black);
+    margin-bottom: 16px;
+}
