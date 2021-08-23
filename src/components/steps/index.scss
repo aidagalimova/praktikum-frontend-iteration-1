@@ -1,0 +1,37 @@
+.ant-steps-item {
+    margin-right: 16px;
+    padding-left: 4px !important;
+    &::after {
+        border: 6px solid transparent !important;
+        border-bottom: 7px solid var(--main-dark-gray) !important;
+        transform: rotate(90deg) !important;
+        top: 70% !important;
+    }
+}
+.ant-steps-navigation {
+    height: 32px !important;
+    width: 426px;
+    padding-top: 2px !important;
+}
+.ant-steps-item-title {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0em;
+    margin-right: 16px;
+}
+.ant-steps
+    .ant-steps-item:not(.ant-steps-item-active)
+    > .ant-steps-item-container[role="button"]:hover
+    .ant-steps-item-title,
+.ant-steps
+    .ant-steps-item:not(.ant-steps-item-active)
+    > .ant-steps-item-container[role="button"]:hover
+    .ant-steps-item-subtitle,
+.ant-steps
+    .ant-steps-item:not(.ant-steps-item-active)
+    > .ant-steps-item-container[role="button"]:hover
+    .ant-steps-item-description {
+    color: var(--main-accent);
+}
