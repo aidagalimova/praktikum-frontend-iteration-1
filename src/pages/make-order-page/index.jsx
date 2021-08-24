@@ -52,7 +52,7 @@ function MakeOrderPage() {
 
   return (
     <div className="page">
-      <Sidebar />
+      <Sidebar isMain={false}/>
       <div className="page-content">
         <Row justify="center">
           <Col flex="1310px">
