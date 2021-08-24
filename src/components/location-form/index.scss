@@ -5,6 +5,7 @@
 
     .cross-icon {
         cursor: pointer;
+        fill: var(--main-black);
         &:hover {
             fill: var(--main-accent);
         }
@@ -37,4 +38,7 @@
     letter-spacing: 0em;
     color: var(--main-black);
     margin-bottom: 16px;
+}
+.ant-select-arrow {
+    cursor: pointer !important;
 }

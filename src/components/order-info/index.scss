@@ -1,0 +1,81 @@
+.info-div {
+    margin-top: 32px;
+    .title {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0em;
+        text-align: right;
+        margin-bottom: 32px;
+    }
+    .location-divs {
+        display: flex;
+        justify-content: space-between;
+        height: 32px;
+        margin-bottom: 24px;
+        .point-div {
+            align-self: flex-end;
+            display: inline-block;
+            .point-text {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 16px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: var(--main-black);
+            }
+        }
+        .dots-div {
+            align-self: flex-end;
+            display: inline-block;
+            .dots {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 16px;
+                letter-spacing: 0em;
+                text-align: left;
+                color: var(--main-dark-gray);
+            }
+        }
+
+        .location-div {
+            display: inline-block;
+            margin-top: -7px;
+            margin-bottom: 56px;
+            .location-text {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 16px;
+                letter-spacing: 0em;
+                text-align: right;
+                color: var(--main-dark-gray);
+                margin-bottom: 0px;
+            }
+        }
+    }
+    .price-div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+        .price {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: var(--main-black);
+            &-text {
+                font-weight: 500;
+            }
+        }
+    }
+    .btn {
+        width: 287px;
+        height: 48px;
+    }
+}

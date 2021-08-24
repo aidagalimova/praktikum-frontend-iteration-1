@@ -1,3 +1,24 @@
+.page {
+    &-content {
+        padding-left: 128px;
+    }
+    .header {
+        margin-top: 16px;
+        margin-right: 64px;
+    }
+}
 .ant-divider-horizontal {
-    margin: 0 !important;
+    margin: 0 -128px !important;
+    width: calc(100% + 128px);
+}
+.ant-divider-vertical {
+    height: 86vh;
+}
+@media (max-width: 1380px) {
+    .location-form-col {
+        flex: 0 0 800px !important;
+    }
+    .divider-col {
+        display: none;
+    }
 }

@@ -1,34 +1,69 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from "react";
 import { Form, Select } from "antd";
 import map from "../../assets/image/map.png";
 import "./index.scss";
 
-function LocationForm() {
+const Option = { Select };
+
+function LocationForm({
+  order,
+  handleCityChange,
+  handlePointChange,
+  locations,
+}) {
+  const cities = locations.map((location) => (
+    <Option key={location.id} value={location.city}>
+      {location.city}
+    </Option>
+  ));
+
+  const points = locations[0].points.map((point) => (
+    <Option key={point.id} value={point.name}>
+      {point.name}
+    </Option>
+  ));
+
   return (
     <>
       <Form>
         <Form.Item className="city-item" label="Город" bordered={false}>
           <Select
+            suffixIcon={null}
             showSearch
             placeholder="Выберите город..."
             bordered={false}
             className="input"
-          />
+            onChange={handleCityChange}
+            value={order.city}
+            filterOption={(input, option) =>
+              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
+          >
+            {cities}
+          </Select>
         </Form.Item>
 
         <Form.Item className="point-item" label="Пункт выдачи">
           <Select
+            suffixIcon={null}
             showSearch
             placeholder="Начните вводить пункт..."
             bordered={false}
             className="input"
-          />
+            onChange={handlePointChange}
+            value={order.point}
+            filterOption={(input, option) =>
+              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
+          >
+            {points}
+          </Select>
         </Form.Item>
       </Form>
 
       <h3 className="map-text">Выберите на карте:</h3>
-
-      <img className="img" src={map} alt="map" />
+      <img className="map-img" src={map} alt="map" />
     </>
   );
 }
