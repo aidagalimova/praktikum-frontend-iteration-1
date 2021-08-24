@@ -8,8 +8,9 @@
     }
 }
 .ant-divider-horizontal {
-    margin: 0 -128px !important;
-    width: calc(100% + 128px);
+    position: fixed;
+    margin: 0 -273px !important;
+    width: calc(100% + 273px);
 }
 .ant-divider-vertical {
     height: 86vh;
@@ -43,6 +44,9 @@
 @media (max-width: 900px) {
     .page-content {
         padding-left: 224px;
+        .content-col {
+            flex: 0 0 550px !important;
+        }
     }
     .location-form-col {
         flex: 0 0 100% !important;
@@ -54,11 +58,19 @@
         flex: 0 0 100% !important;
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .page-content {
         padding-left: 64px;
     }
+    .header {
+        margin-bottom: 8px;
+    }
     .header-div .name {
         margin-bottom: 0px;
+    }
+}
+@media (max-width: 500px) {
+    .header {
+        margin-right: -40px !important;
     }
 }

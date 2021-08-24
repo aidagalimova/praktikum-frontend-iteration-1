@@ -109,3 +109,24 @@
         }
     }
 }
+
+@media (max-width: 500px) {
+    .info-div {
+        width: 380px;
+        .title {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .location-divs {
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+        .price-div {
+            margin-bottom: 0px;
+            place-content: center;
+        }
+        .btn {
+            width: 380px;
+        }
+    }
+} 

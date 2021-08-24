@@ -53,3 +53,19 @@
         width: 425px;
     }
 }
+@media (max-width: 575px) {
+    .ant-form .ant-form-item .ant-form-item-label,
+    .ant-form .ant-form-item .ant-form-item-control {
+        flex: none;
+        max-width: 100%;
+    }
+    .city {
+        width: calc(100% + 45px) !important;
+    }
+} 
+
+@media (max-width: 500px) {
+    .map-img {
+        width: 380px;
+    }
+} 

@@ -28,7 +28,7 @@ function MakeOrderPage() {
       <Sidebar isMain={false} />
       <div className="page-content">
         <Row justify="center">
-          <Col flex="1310px">
+          <Col className="content-col" flex="1310px">
             <div className="header">
               <MainPageHeader />
             </div>
