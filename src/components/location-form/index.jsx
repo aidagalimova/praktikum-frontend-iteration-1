@@ -33,7 +33,7 @@ function LocationForm({
             suffixIcon={null}
             showSearch
             placeholder="Выберите город..."
-            className="input"
+            className="input city"
             onChange={handleCityChange}
             value={order.city}
             filterOption={(input, option) =>
@@ -61,9 +61,10 @@ function LocationForm({
           </Select>
         </Form.Item>
       </Form>
-
       <h3 className="map-text">Выберите на карте:</h3>
-      <img className="map-img" src={map} alt="map" />
+      <div>
+        <img className="map-img" src={map} alt="map" />
+      </div>
     </>
   );
 }

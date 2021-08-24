@@ -13,7 +13,7 @@ function OrderInfo({ info }) {
         {info.point ? (
           <>
             <div className="dots-div">
-              <h3 className="dots">........................</h3>
+              <h3 className="dots">&nbsp;........................&nbsp;</h3>
             </div>
             <div className="location-div">
               <h3 className="location-text">{info.city}</h3>

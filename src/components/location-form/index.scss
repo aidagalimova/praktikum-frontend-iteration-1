@@ -42,3 +42,14 @@
 .ant-select-arrow {
     cursor: pointer !important;
 }
+
+@media (max-width: 1240px) {
+    .map-img {
+        width: 525px;
+    }
+}
+@media (max-width: 1024px) {
+    .map-img {
+        width: 425px;
+    }
+}

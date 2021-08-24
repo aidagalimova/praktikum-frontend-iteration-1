@@ -1,5 +1,6 @@
 .info-div {
     margin-top: 32px;
+    margin-right: 64px;
     .title {
         font-size: 18px;
         font-style: normal;
@@ -77,5 +78,34 @@
     .btn {
         width: 287px;
         height: 48px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .info-div {
+        margin-right: 32px;
+        .btn {
+            width: 270px;
+        }
+    }
+}
+@media (max-width: 900px) {
+    .info-div {
+        width: 425px;
+        .title {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .location-divs {
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .price-div {
+            margin-bottom: 16px;
+            place-content: center;
+        }
+        .btn {
+            width: 425px;
+        }
     }
 }

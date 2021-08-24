@@ -35,8 +35,8 @@ function MakeOrderPage() {
             <Divider />
             <FormSteps />
             <Divider />
-            <Row>
-              <Col flex="0 0 905px" className="location-form-col">
+            <Row className="location-info-row">
+              <Col flex="0 0 856px" className="location-form-col">
                 <LocationForm
                   order={{ city: order.city, points: order.points }}
                   handleCityChange={handleCityChange}
@@ -44,10 +44,10 @@ function MakeOrderPage() {
                   locations={locations}
                 />
               </Col>
-              <Col flex="50px" className="divider-col">
+              <Col flex="100px" className="divider-col">
                 <Divider type="vertical" />
               </Col>
-              <Col>
+              <Col  className="order-info-col">
                 <OrderInfo info={order} />
               </Col>
             </Row>
