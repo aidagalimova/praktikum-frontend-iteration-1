@@ -11,31 +11,28 @@ function LocationForm({
   handlePointChange,
   locations,
 }) {
-  function Cities() {
+  const cities = () =>
     locations.map((location) => (
       <Option key={location.id} value={location.city}>
         {location.city}
       </Option>
     ));
-  }
 
-  function Points() {
+  const points = () =>
     locations[0].points.map((point) => (
       <Option key={point.id} value={point.name}>
         {point.name}
       </Option>
     ));
-  }
-
   return (
     <>
       <Form>
-        <Form.Item className="city-item" label="Город" bordered={false}>
+        <Form.Item className="city-item" label="Город">
           <Select
+            bordered={false}
             suffixIcon={null}
             showSearch
             placeholder="Выберите город..."
-            bordered={false}
             className="input"
             onChange={handleCityChange}
             value={order.city}
@@ -43,16 +40,16 @@ function LocationForm({
               option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
             }
           >
-            <Cities />
+            {cities()}
           </Select>
         </Form.Item>
 
         <Form.Item className="point-item" label="Пункт выдачи">
           <Select
+            bordered={false}
             suffixIcon={null}
             showSearch
             placeholder="Начните вводить пункт..."
-            bordered={false}
             className="input"
             onChange={handlePointChange}
             value={order.point}
@@ -60,7 +57,7 @@ function LocationForm({
               option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
             }
           >
-            {Points}
+            {points()}
           </Select>
         </Form.Item>
       </Form>
