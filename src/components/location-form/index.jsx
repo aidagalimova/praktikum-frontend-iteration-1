@@ -1,10 +1,9 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from "react";
 import { Form, Select } from "antd";
 import map from "../../assets/image/map.png";
 import "./index.scss";
 
-const Option = { Select };
+const { Option } = Select;
 
 function LocationForm({
   order,
@@ -12,17 +11,21 @@ function LocationForm({
   handlePointChange,
   locations,
 }) {
-  const cities = locations.map((location) => (
-    <Option key={location.id} value={location.city}>
-      {location.city}
-    </Option>
-  ));
+  function Cities() {
+    locations.map((location) => (
+      <Option key={location.id} value={location.city}>
+        {location.city}
+      </Option>
+    ));
+  }
 
-  const points = locations[0].points.map((point) => (
-    <Option key={point.id} value={point.name}>
-      {point.name}
-    </Option>
-  ));
+  function Points() {
+    locations[0].points.map((point) => (
+      <Option key={point.id} value={point.name}>
+        {point.name}
+      </Option>
+    ));
+  }
 
   return (
     <>
@@ -40,7 +43,7 @@ function LocationForm({
               option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
             }
           >
-            {cities}
+            <Cities />
           </Select>
         </Form.Item>
 
@@ -57,7 +60,7 @@ function LocationForm({
               option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
             }
           >
-            {points}
+            {Points}
           </Select>
         </Form.Item>
       </Form>
