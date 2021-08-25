@@ -19,6 +19,10 @@
     border-radius: 0px;
     max-width: 224px;
 }
+
+.city {
+    cursor: pointer;
+}
 .ant-form-item-label {
     font-size: 14px;
     font-style: normal;
@@ -39,10 +43,51 @@
     color: var(--main-black);
     margin-bottom: 16px;
 }
+.ant-select-item {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 16px;
+    letter-spacing: 0em;
+    color: var(--main-dark-gray);
+}
 .ant-select-arrow {
     cursor: pointer !important;
 }
+.ant-select-dropdown {
+    box-shadow: none !important;
+    border: 1px solid var(--main-light-gray) !important;
+    padding: 0 !important;
+    height: 120px !important;
+    overflow-y: scroll;
+}
 
+::-webkit-scrollbar {
+    width: 4px;
+    background: white;
+}
+::-webkit-scrollbar-track {
+    background: white;
+    border-left: 1px solid var(--main-light-gray);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-dark-gray);
+    border: 1px solid transparent;
+    border-radius: 2px;
+    background-clip: content-box;
+}
+
+.ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+    background: none !important;
+    color: var(--main-accent);
+}
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+    background: none;
+    color: var(--main-accent);
+}
+.ant-select-item-empty {
+    display: none;
+}
 @media (max-width: 1240px) {
     .map-img {
         width: 525px;
@@ -62,10 +107,10 @@
     .city {
         width: calc(100% + 45px) !important;
     }
-} 
+}
 
 @media (max-width: 500px) {
     .map-img {
         width: 380px;
     }
-} 
+}
