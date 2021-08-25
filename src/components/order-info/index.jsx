@@ -12,9 +12,7 @@ function OrderInfo({ info }) {
         </div>
         {info.point ? (
           <>
-            <div className="dots-div">
-              <h3 className="dots">&nbsp;........................&nbsp;</h3>
-            </div>
+            <div className="dots" />
             <div className="location-div">
               <h3 className="location-text">{info.city}</h3>
               <h3 className="location-text">{info.point}</h3>
@@ -28,6 +26,7 @@ function OrderInfo({ info }) {
         <div>
           <h3 className="price-text">Цена:&nbsp;</h3>
         </div>
+        <div className="price-dots" />
         <div>
           <h3 className="price">
             {info.point ? "от 8 000 до 12 000 ₽" : "0 ₽"}

@@ -98,6 +98,21 @@
         width: 425px;
     }
 }
+@media (max-width: 900px) {
+    .map-img {
+        width: 390px;
+    }
+}
+@media (max-width: 700px) {
+    .map-img {
+        width: 500px;
+    }
+}
+@media (max-width: 550px) {
+    .map-img {
+        width: 420px;
+    }
+}
 @media (max-width: 575px) {
     .ant-form .ant-form-item .ant-form-item-label,
     .ant-form .ant-form-item .ant-form-item-control {
@@ -112,5 +127,11 @@
 @media (max-width: 500px) {
     .map-img {
         width: 380px;
+    }
+}
+
+@media (max-width: 420px) {
+    .map-img {
+        width: 300px;
     }
 }

@@ -28,18 +28,13 @@
                 color: var(--main-black);
             }
         }
-        .dots-div {
-            align-self: flex-end;
-            display: inline-block;
-            .dots {
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 300;
-                line-height: 16px;
-                letter-spacing: 0em;
-                text-align: left;
-                color: var(--main-dark-gray);
-            }
+        .dots {
+            width: 30%;
+            margin-bottom: 8px;
+            background-image: linear-gradient(to right, var(--main-dark-gray) 20%, rgba(255, 255, 255, 0) 0%);
+            background-position: bottom;
+            background-size: 4px 1px;
+            background-repeat: repeat-x;
         }
 
         .location-div {
@@ -83,7 +78,7 @@
 
 @media (max-width: 1024px) {
     .info-div {
-        margin-right: 32px;
+        margin-right: 56px;
         .btn {
             width: 270px;
         }
@@ -91,21 +86,62 @@
 }
 @media (max-width: 900px) {
     .info-div {
-        width: 425px;
+        margin-right: 40px;
         .title {
-            text-align: center;
             margin-bottom: 16px;
         }
         .location-divs {
-            justify-content: center;
+            justify-content: space-between;
             margin-bottom: 16px;
+            .dots {
+                width: 12%;
+            }
         }
         .price-div {
             margin-bottom: 16px;
-            place-content: center;
         }
         .btn {
-            width: 425px;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .location-divs .dots {
+        width: 10%;
+    }
+}
+
+@media (max-width: 700px) {
+    .info-div {
+        margin-right: 0px;
+        .location-divs {
+            margin-bottom: 8px;
+          .dots {
+                width: 50%;
+                background-position: bottom;
+                background-size: 4.5px 1.5px !important;
+                background-repeat: repeat-x;
+            }
+        }
+        .title {
+            margin-bottom: 24px;
+        }
+        .price-div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0px;
+            .price-dots {
+                height: 2px;
+                width: 50%;
+                background-position: bottom;
+                background-size: 4.5px 1.5px !important;
+                background-repeat: repeat-x;
+                background-image: linear-gradient(to right, var(--main-dark-gray) 20%, rgba(255, 255, 255, 0) 0%);
+            }
+        }
+        .btn {
+            width: 100%;
         }
     }
 }
@@ -114,19 +150,37 @@
     .info-div {
         width: 380px;
         .title {
-            text-align: center;
             margin-bottom: 8px;
         }
         .location-divs {
-            justify-content: center;
             margin-bottom: 8px;
+        }
+        .location-divs  .dots {
+            width: 40%;
         }
         .price-div {
             margin-bottom: 0px;
-            place-content: center;
         }
         .btn {
             width: 380px;
         }
+        .price-div .price-dots {
+            width: 40%;
+        }
     }
-} 
+}
+
+@media (max-width: 420px) {
+    .info-div {
+        width: 300px;
+        .btn {
+            width: 300px;
+        }
+        .location-divs .dots {
+            width: 25% ;
+        }
+        .price-div .price-dots {
+            width: 25%;
+        }
+    }
+}
