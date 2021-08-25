@@ -75,7 +75,14 @@
         height: 48px;
     }
 }
-
+@media (max-width: 1440px) {
+    .info-div {
+        margin-right: 32px;
+        .btn {
+            width: 250px;
+        }
+    }
+}
 @media (max-width: 1024px) {
     .info-div {
         margin-right: 56px;
@@ -117,7 +124,7 @@
         margin-right: 0px;
         .location-divs {
             margin-bottom: 8px;
-          .dots {
+            .dots {
                 width: 50%;
                 background-position: bottom;
                 background-size: 4.5px 1.5px !important;
@@ -155,7 +162,7 @@
         .location-divs {
             margin-bottom: 8px;
         }
-        .location-divs  .dots {
+        .location-divs .dots {
             width: 40%;
         }
         .price-div {
@@ -177,7 +184,7 @@
             width: 300px;
         }
         .location-divs .dots {
-            width: 25% ;
+            width: 25%;
         }
         .price-div .price-dots {
             width: 25%;

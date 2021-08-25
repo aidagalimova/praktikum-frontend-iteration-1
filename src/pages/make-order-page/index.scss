@@ -18,12 +18,19 @@
 @media (max-width: 1440px) {
     .location-info-row {
         justify-content: space-between !important;
-        .location-form-col {
-            flex: 0 0 525px !important;
-        }
         .divider-col {
             flex: 0 0 1px !important;
         }
+    }
+}
+@media (max-width: 1327px) {
+    .location-form-col {
+        flex: 0 0 800px !important;
+    }
+}
+@media (max-width: 1240px) {
+    .location-form-col {
+        flex: 0 0 590px !important;
     }
 }
 @media (max-width: 1024px) {
@@ -98,7 +105,7 @@
     .content-col {
         flex: 0 0 300px !important;
         justify-content: center;
-    } 
+    }
     .order-info-col {
         flex: 0 0 300px !important;
     }
