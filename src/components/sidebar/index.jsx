@@ -37,7 +37,7 @@ function Sidebar({isMain}) {
           <div className={`background ${isMain? "": "background-not-main"}`} />
         </>
       )}
-      <div className={collapsed ? "language-div" : "language-div formobile"}>
+      <div className={`${collapsed ? "language-div" : "language-div formobile"} ${isMain? "" : " not-main"}`}>
         <Ellipse className="ellipse" />
         <h2 className="language-text bold">Eng</h2>
       </div>

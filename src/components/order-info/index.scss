@@ -3,8 +3,6 @@
     margin-right: 64px;
     .title {
         font-size: 18px;
-        font-style: normal;
-        font-weight: 500;
         line-height: 21px;
         letter-spacing: 0em;
         text-align: right;
@@ -20,8 +18,6 @@
             display: inline-block;
             .point-text {
                 font-size: 14px;
-                font-style: normal;
-                font-weight: 300;
                 line-height: 16px;
                 letter-spacing: 0em;
                 text-align: left;
@@ -43,8 +39,6 @@
             margin-bottom: 56px;
             .location-text {
                 font-size: 14px;
-                font-style: normal;
-                font-weight: 300;
                 line-height: 16px;
                 letter-spacing: 0em;
                 text-align: right;
@@ -59,15 +53,10 @@
         margin-bottom: 24px;
         .price {
             font-size: 16px;
-            font-style: normal;
-            font-weight: 400;
             line-height: 16px;
             letter-spacing: 0em;
             text-align: left;
             color: var(--main-black);
-            &-text {
-                font-weight: 500;
-            }
         }
     }
     .btn {
@@ -81,7 +70,7 @@
         .btn {
             width: 250px;
         }
-        .location-divs  .dots {
+        .location-divs .dots {
             width: 20%;
         }
     }
@@ -109,7 +98,7 @@
             justify-content: space-between;
             margin-bottom: 16px;
             .dots {
-                width: 12%;
+                width: 8%;
             }
         }
         .price-div {
@@ -122,8 +111,8 @@
 }
 
 @media (max-width: 767px) {
-    .location-divs .dots {
-        width: 10%;
+    .info-div .location-divs .dots {
+        width: 7%;
     }
 }
 

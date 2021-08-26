@@ -1,6 +1,6 @@
 import React from "react";
-import "antd/dist/antd.css";
 import "./App.scss";
+import "antd/dist/antd.css";
 import MakeOrderPage from "../pages/make-order-page";
 
 function App() {

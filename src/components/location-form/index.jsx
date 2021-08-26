@@ -27,7 +27,7 @@ function LocationForm({
   return (
     <>
       <Form>
-        <Form.Item className="city-item" label="Город">
+        <Form.Item className="city-item light" label="Город">
           <Select
             bordered={false}
             suffixIcon={null}
@@ -44,7 +44,7 @@ function LocationForm({
           </Select>
         </Form.Item>
 
-        <Form.Item className="point-item" label="Пункт выдачи">
+        <Form.Item className="point-item light" label="Пункт выдачи">
           <Select
             bordered={false}
             suffixIcon={null}
@@ -61,7 +61,7 @@ function LocationForm({
           </Select>
         </Form.Item>
       </Form>
-      <h3 className="map-text">Выберите на карте:</h3>
+      <h3 className="map-text light">Выберите на карте:</h3>
       <div>
         <img className="map-img" src={map} alt="map" />
       </div>

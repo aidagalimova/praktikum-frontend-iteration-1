@@ -1,7 +1,7 @@
 .city-item {
     margin-bottom: 4px;
     margin-top: 32px;
-    margin-left: 46px;
+    margin-left: 53px;
 
     .cross-icon {
         cursor: pointer;
@@ -24,9 +24,9 @@
     cursor: pointer;
 }
 .ant-form-item-label {
+    font-family: "RobotoLight";
     font-size: 14px;
     font-style: normal;
-    font-weight: 300;
     line-height: 16px;
     letter-spacing: 0em;
     color: var(--main-black);
@@ -37,16 +37,15 @@
 .map-text {
     font-size: 14px;
     font-style: normal;
-    font-weight: 300;
     line-height: 16px;
     letter-spacing: 0em;
     color: var(--main-black);
     margin-bottom: 16px;
 }
 .ant-select-item {
+    font-family: "RobotoLight";
     font-size: 14px;
     font-style: normal;
-    font-weight: 300;
     line-height: 16px;
     letter-spacing: 0em;
     color: var(--main-dark-gray);

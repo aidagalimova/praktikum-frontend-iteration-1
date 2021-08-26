@@ -20,10 +20,10 @@ function FormSteps() {
         current={curStep}
         onChange={onChange}
       >
-        <Step className="step" icon={<></>} title="Местоположение" />
-        <Step className="step" icon={<></>} title="Модель" />
-        <Step className="step" icon={<></>} title="Дополнительно" />
-        <Step className="step" icon={<></>} title="Итого" />
+        <Step className="step bold" icon={<></>} title="Местоположение" />
+        <Step className="step bold" icon={<></>} title="Модель" />
+        <Step className="step bold" icon={<></>} title="Дополнительно" />
+        <Step className="step bold" icon={<></>} title="Итого" />
       </Steps>
     </div>
   );

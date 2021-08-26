@@ -27,7 +27,7 @@
     z-index: 15;
     height: 100vh;
     position: fixed;
-    &-not-main{
+    &-not-main {
         background-color: #111518;
     }
 }
@@ -103,7 +103,11 @@
     .ant-layout-sider {
         min-width: 16px !important;
     }
+    .not-main {
+        display: none;
+    }
     .formobile {
         z-index: 40;
+        display: block;
     }
 }
