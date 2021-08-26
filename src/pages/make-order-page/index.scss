@@ -17,9 +17,8 @@
 }
 @media (max-width: 1440px) {
     .location-info-row {
-        justify-content: space-between !important;
         .divider-col {
-            flex: 0 0 1px !important;
+            flex: 0 0 30px !important;
         }
     }
 }
@@ -29,6 +28,12 @@
     }
 }
 @media (max-width: 1240px) {
+    .location-info-row {
+        justify-content: space-between !important;
+        .divider-col {
+            flex: 0 0 1px !important;
+        }
+    }
     .location-form-col {
         flex: 0 0 590px !important;
     }
