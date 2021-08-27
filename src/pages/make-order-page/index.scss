@@ -27,7 +27,7 @@
         flex: 0 0 800px !important;
     }
 }
-@media (max-width: 1240px) {
+@media (max-width: 1240px) { 
     .location-info-row {
         justify-content: space-between !important;
         .divider-col {
@@ -35,7 +35,7 @@
         }
     }
     .location-form-col {
-        flex: 0 0 590px !important;
+        flex: 0 0 580px !important;
     }
 }
 @media (max-width: 1024px) {
