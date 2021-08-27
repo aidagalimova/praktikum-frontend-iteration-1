@@ -100,13 +100,10 @@
 
 @media (max-width: 500px) {
     .page-content {
-        padding-left: 16px;
+        margin-left: 10px;
     }
 }
 @media (max-width: 420px) {
-    .page-content {
-        padding-left: 8px;
-    }
     .content-col {
         flex: 0 0 300px !important;
         justify-content: center;

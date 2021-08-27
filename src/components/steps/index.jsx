@@ -5,7 +5,7 @@ import "./index.scss";
 const { Step } = Steps;
 
 function FormSteps() {
-  const [curStep, setCurStep] = useState({ current: 0 });
+  const [curStep, setCurStep] = useState(0);
 
   const onChange = (cur) => {
     setCurStep({ cur });
@@ -14,7 +14,7 @@ function FormSteps() {
   return (
     <div>
       <Steps
-      className="steps"
+        className="steps"
         type="navigation"
         size="small"
         current={curStep}
