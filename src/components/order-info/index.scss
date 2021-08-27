@@ -61,24 +61,30 @@
         }
     }
     .btn {
-        width: 287px;
+        width: 100%;
         height: 48px;
     }
 }
 @media (max-width: 1440px) {
     .info-div {
         margin-right: 32px;
-        .btn {
-            width: 250px;
-        }
+        width: 330px;
         .location-divs .dots {
             width: 20%;
         }
     }
 }
 
+@media (max-width: 1240px) {
+    .info-div {
+        margin-right: 32px;
+        width: 280px;
+    }
+}
+
 @media (max-width: 700px) {
     .info-div {
+        width: auto;
         .location-divs {
             margin-bottom: 8px;
             .dots {
