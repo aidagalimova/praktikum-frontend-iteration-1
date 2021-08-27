@@ -10,7 +10,7 @@
         border-left: 1px solid var(--main-light-gray);
         position: sticky;
         right: 0;
-        height: 100vh;
+        height: 84vh;
     }
 }
 .ant-divider-horizontal {
@@ -22,8 +22,8 @@
 @media (min-width: 1440px) {
     .page .order-info-col {
         width: 390px;
-   }
-} 
+    }
+}
 @media (max-width: 1440px) {
     .location-form-col {
         flex: 0 0 835px !important;
