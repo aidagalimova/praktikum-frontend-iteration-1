@@ -1,6 +1,7 @@
 .info-div {
     margin-top: 32px;
     margin-right: 64px;
+    padding-left: 32px;
     .title {
         font-size: 18px;
         line-height: 21px;
@@ -75,48 +76,13 @@
         }
     }
 }
-@media (max-width: 1240px) {
-    .info-div {
-        margin-right: 40px;
-    }
-}
-@media (max-width: 1024px) {
-    .info-div {
-        margin-right: 56px;
-        .btn {
-            width: 270px;
-        }
-    }
-}
-@media (max-width: 900px) {
-    .info-div {
-        margin-right: 40px;
-        .title {
-            margin-bottom: 16px;
-        }
-        .location-divs {
-            justify-content: space-between;
-            margin-bottom: 16px;
-            .dots {
-                width: 6%;
-            }
-        }
-        .price-div {
-            margin-bottom: 16px;
-        }
-        .btn {
-            width: 100%;
-        }
-    }
-}
 
 @media (max-width: 700px) {
     .info-div {
-        margin-right: 0px;
         .location-divs {
             margin-bottom: 8px;
             .dots {
-                width: 50%;
+                width: 45%;
                 background-position: bottom;
                 background-size: 4.5px 1.5px !important;
                 background-repeat: repeat-x;
@@ -131,7 +97,7 @@
             margin-bottom: 0px;
             .price-dots {
                 height: 2px;
-                width: 50%;
+                width: 45%;
                 background-position: bottom;
                 background-size: 4.5px 1.5px !important;
                 background-repeat: repeat-x;
@@ -146,6 +112,7 @@
 
 @media (max-width: 500px) {
     .info-div {
+        padding-left: 0px;
         width: 380px;
         .title {
             margin-bottom: 8px;

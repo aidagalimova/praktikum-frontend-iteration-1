@@ -44,9 +44,6 @@ function MakeOrderPage() {
                   locations={locations}
                 />
               </Col>
-              <Col flex="40px" className="divider-col">
-                <Divider type="vertical" />
-              </Col>
               <Col  className="order-info-col">
                 <OrderInfo info={order} />
               </Col>
