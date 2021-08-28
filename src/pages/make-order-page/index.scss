@@ -2,15 +2,20 @@
     &-content {
         padding-left: 128px;
     }
-    .header {
-        margin-top: 16px;
-        margin-right: 32px;
-    }
-    .order-info-col {
-        border-left: 1px solid var(--main-light-gray);
-        position: sticky;
-        right: 0;
-        height: 84vh;
+    .content-col {
+        height: 100vh;
+        .header {
+            margin-top: 16px;
+            margin-right: 32px;
+        }
+        .location-info-row {
+            height: calc(100vh - 112px);
+            .order-info-col {
+                border-left: 1px solid var(--main-light-gray);
+                position: sticky;
+                right: 0;
+            }
+        }
     }
 }
 .ant-divider-horizontal {
