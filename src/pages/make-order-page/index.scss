@@ -29,7 +29,11 @@
         width: 390px;
     }
 }
+
 @media (max-width: 1440px) {
+    .page .content-col .location-info-row {
+        justify-content: space-between;
+    }
     .location-form-col {
         flex: 0 0 835px !important;
     }
