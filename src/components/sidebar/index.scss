@@ -10,6 +10,8 @@
     background-color: var(--nav-el-black);
     width: 64px;
     min-height: 100vh;
+    position: fixed;
+    z-index: 1;
 }
 
 .not-collapsed {
@@ -26,13 +28,17 @@
     z-index: 15;
     height: 100vh;
     position: fixed;
+    &-not-main {
+        background-color: #111518;
+    }
 }
 
 .language-div {
     bottom: 0;
-    position: absolute;
+    position: fixed;
     margin-bottom: 32px;
     margin-left: 20px;
+    z-index: 1;
     .language-text {
         font-size: 13px;
         color: var(--main-accent);
@@ -99,7 +105,11 @@
     .ant-layout-sider {
         min-width: 16px !important;
     }
+    .not-main {
+        display: none;
+    }
     .formobile {
         z-index: 40;
+        display: block;
     }
 }
