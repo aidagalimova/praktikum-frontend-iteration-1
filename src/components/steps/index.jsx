@@ -1,16 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Steps } from "antd";
 import "./index.scss";
 
 const { Step } = Steps;
 
-function FormSteps() {
-  const [curStep, setCurStep] = useState(0);
-
-  const onChange = (cur) => {
-    setCurStep({ cur });
-  };
-
+function FormSteps({ curStep, onStepChange, order }) {
   return (
     <div>
       <Steps
@@ -18,12 +12,32 @@ function FormSteps() {
         type="navigation"
         size="small"
         current={curStep}
-        onChange={onChange}
+        onChange={onStepChange}
       >
-        <Step className="step bold" icon={<></>} title="Местоположение" />
-        <Step className="step bold" icon={<></>} title="Модель" />
-        <Step className="step bold" icon={<></>} title="Дополнительно" />
-        <Step className="step bold" icon={<></>} title="Итого" />
+        <Step
+          className="step bold"
+          icon={<></>}
+          title="Местоположение"
+          disabled={curStep <= 0}
+        />
+        <Step
+          className="step bold"
+          icon={<></>}
+          title="Модель"
+          disabled={curStep <= 1 && !order.point}
+        />
+        <Step
+          className="step bold"
+          icon={<></>}
+          title="Дополнительно"
+          disabled={curStep <= 2 && !order.selectedCar}
+        />
+        <Step
+          className="step bold"
+          icon={<></>}
+          title="Итого"
+          disabled={curStep <= 3 && !order.color}
+        />
       </Steps>
     </div>
   );
