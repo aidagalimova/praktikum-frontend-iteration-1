@@ -55,7 +55,7 @@ function MakeOrderPage() {
             </div>
             <Row className="location-info-row">
               <Col flex="0 0 900px" className="location-form-col">
-                {curStep === 0 ? (
+                {(curStep === 0 && (
                   <LocationForm
                     order={{
                       city: order.city,
@@ -66,19 +66,14 @@ function MakeOrderPage() {
                     handlePointChange={handlePointChange}
                     locations={locations}
                   />
-                ) : (
-                  <></>
-                )}
-
-                {curStep === 1 ? (
-                  <CarModels
-                    cars={cars}
-                    selectedCar={order.selectedCar}
-                    handleCarModelChange={handleCarModelChange}
-                  />
-                ) : (
-                  <></>
-                )}
+                )) ||
+                  (curStep === 1 && (
+                    <CarModels
+                      cars={cars}
+                      selectedCar={order.selectedCar}
+                      handleCarModelChange={handleCarModelChange}
+                    />
+                  ))}
               </Col>
               <Col className="order-info-col">
                 <OrderInfo
