@@ -10,14 +10,14 @@ import locations, { cars } from "./consts";
 import "./index.scss";
 
 function MakeOrderPage() {
-  const [curStep, setCurStep] = useState(0);
+  const [curStep, setCurStep] = useState(1);
   const onStepChange = (cur) => {
     setCurStep(cur);
   };
 
   const [order, setOrder] = useState({
-    city: null,
-    point: null,
+    city: "Ульяновск",
+    point: "Нариманова 43",
   });
 
   const handleCityChange = (value) => {
@@ -46,7 +46,11 @@ function MakeOrderPage() {
                 <MainPageHeader />
               </div>
               <Divider />
-              <FormSteps curStep={curStep} onStepChange={onStepChange} order={order}/>
+              <FormSteps
+                curStep={curStep}
+                onStepChange={onStepChange}
+                order={order}
+              />
               <Divider />
             </div>
             <Row className="location-info-row">
@@ -75,7 +79,6 @@ function MakeOrderPage() {
                 ) : (
                   <></>
                 )}
-
               </Col>
               <Col className="order-info-col">
                 <OrderInfo
