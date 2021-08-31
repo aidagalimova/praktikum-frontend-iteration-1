@@ -1,6 +1,7 @@
 import React from "react";
 import LocationInfo from "./location-info";
 import CarModelInfo from "./car-model-info";
+import AdditionsInfo from "./addotions-info";
 import PriceInfo from "./price-info";
 import "./index.scss";
 import NextButton from "./next-button";
@@ -11,6 +12,7 @@ function OrderInfo({ info, onStepChange, curStep }) {
       <h2 className="title medium">Ваш заказ:</h2>
       <LocationInfo info={info} />
       <CarModelInfo info={info} curStep={curStep} />
+      <AdditionsInfo info={info} curStep={curStep} />
       <PriceInfo info={info} />
 
       {(curStep === 0 && (
