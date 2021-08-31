@@ -6,18 +6,23 @@ import MainPageHeader from "../../components/header";
 import LocationForm from "../../components/location-form";
 import OrderInfo from "../../components/order-info";
 import CarModels from "../../components/car-models";
+import AdditionsForm from "../../components/additions-form";
 import locations, { cars } from "./consts";
 import "./index.scss";
 
 function MakeOrderPage() {
-  const [curStep, setCurStep] = useState(1);
+  const [curStep, setCurStep] = useState(2);
+
   const onStepChange = (cur) => {
     setCurStep(cur);
   };
 
   const [order, setOrder] = useState({
     city: "Ульяновск",
-    point: "Нариманова 43",
+    point: "Нариманова 42",
+    selectedCar: { company: "Hyndai", model: "i30 N" },
+    color: "Любой",
+    tariff: "Поминутно",
   });
 
   const handleCityChange = (value) => {
@@ -27,12 +32,23 @@ function MakeOrderPage() {
     });
     return order;
   };
-
   const handlePointChange = (value) => {
     setOrder({ ...order, point: value });
   };
   const handleCarModelChange = (car) => {
     setOrder({ ...order, selectedCar: car });
+  };
+  const handleColorChange = (e) => {
+    setOrder({ ...order, color: e.target.value });
+  };
+  const handleDateChange = (e) => {
+    setOrder({ ...order, date: e.target.value });
+  };
+  const handleTariffChange = (e) => {
+    setOrder({ ...order, tariff: e.target.value });
+  };
+  const handleServicesChange = (value) => {
+    setOrder({ ...order, services: value });
   };
 
   return (
@@ -72,6 +88,16 @@ function MakeOrderPage() {
                       cars={cars}
                       selectedCar={order.selectedCar}
                       handleCarModelChange={handleCarModelChange}
+                    />
+                  )) ||
+                  (curStep === 2 && (
+                    <AdditionsForm
+                      handleColorChange={handleColorChange}
+                      handleDateChange={handleDateChange}
+                      handleTariffChange={handleTariffChange}
+                      handleServicesChange={handleServicesChange}
+                      color={order.color}
+                      tariff={order.tariff}
                     />
                   ))}
               </Col>
