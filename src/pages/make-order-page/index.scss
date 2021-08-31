@@ -1,0 +1,122 @@
+.page {
+    &-content {
+        padding-left: 128px;
+    }
+    .content-col {
+        height: 100vh;
+        .header {
+            margin-top: 16px;
+            margin-right: 32px;
+        }
+        .location-info-row {
+            height: calc(100vh - 112px);
+            .order-info-col {
+                border-left: 1px solid var(--main-light-gray);
+                position: sticky;
+                right: 0;
+            }
+        }
+    }
+}
+.ant-divider-horizontal {
+    position: fixed;
+    margin: 0 -273px !important;
+    width: calc(100% + 273px);
+}
+
+@media (min-width: 1441px) {
+    .page .order-info-col {
+        width: 390px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .page .content-col .location-info-row {
+        justify-content: space-between;
+    }
+    .location-form-col {
+        flex: 0 0 835px !important;
+    }
+}
+
+@media (max-width: 1327px) {
+    .location-form-col {
+        flex: 0 0 750px !important;
+    }
+}
+@media (max-width: 1240px) {
+    .location-info-row {
+        justify-content: space-between !important;
+    }
+    .location-form-col {
+        flex: 0 0 580px !important;
+    }
+}
+@media (max-width: 1024px) {
+    .page-content {
+        padding-left: 96px;
+    }
+    .location-info-row {
+        justify-content: space-between !important;
+        .location-form-col {
+            flex: 0 0 425px !important;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .location-info-row .location-form-col {
+        flex: 0 0 350px !important;
+    }
+}
+@media (max-width: 767px) {
+    .page-content {
+        padding-left: 32px;
+    }
+    .header {
+        margin-bottom: 8px;
+    }
+    .header-div .name {
+        margin-bottom: 0px;
+    }
+}
+
+@media (max-width: 700px) {
+    .page .content-col .location-info-row {
+        height: auto;
+    }
+    .header {
+        margin-right: 0px !important;
+    }
+    .content-col {
+        flex: 0 0 400px !important;
+        justify-content: center;
+    }
+    .page-content {
+        padding-left: 0px;
+    }
+    .location-form-col {
+        flex: 0 0 100% !important;
+    }
+    .order-info-col {
+        position: relative !important;
+        flex: 0 500px !important;
+        border-left: none !important;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .page-content {
+        margin-left: 10px;
+    }
+}
+@media (max-width: 420px) {
+    .content-col {
+        flex: 0 0 300px !important;
+        justify-content: center;
+    }
+    .order-info-col {
+        flex: 0 0 300px !important;
+    }
+}

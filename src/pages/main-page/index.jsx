@@ -11,7 +11,7 @@ function MainPage() {
   return (
     <div className="page">
       <Layout>
-        <Sidebar />
+        <Sidebar isMain />
         <Content className="content">
           <MainPageContent />
         </Content>

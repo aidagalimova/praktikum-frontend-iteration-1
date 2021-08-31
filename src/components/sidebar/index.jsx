@@ -7,7 +7,7 @@ import "./index.scss";
 import SidebarEls from "./sidebar-els";
 
 const { Sider } = Layout;
-function Sidebar() {
+function Sidebar({isMain}) {
   const [collapsed, setCollapsed] = useState(true);
 
   const toggleCollapsed = () => {
@@ -34,10 +34,10 @@ function Sidebar() {
             />
             <SidebarEls />
           </div>
-          <div className="background" />
+          <div className={`background ${isMain? "": "background-not-main"}`} />
         </>
       )}
-      <div className={collapsed ? "language-div" : "language-div formobile"}>
+      <div className={`${collapsed ? "language-div" : "language-div formobile"} ${isMain? "" : " not-main"}`}>
         <Ellipse className="ellipse" />
         <h2 className="language-text bold">Eng</h2>
       </div>
