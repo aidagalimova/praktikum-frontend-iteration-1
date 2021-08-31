@@ -1,0 +1,44 @@
+.rental-period-div {
+    max-width: 224px;
+    .date-picker {
+        width: 224px;
+        padding-left: 0;
+        .ant-picker-input input::placeholder {
+            color: var(--main-dark-gray);
+            font-family: "RobotoLight";
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0em;
+        }
+        .ant-picker-input{
+            padding-left: 8px;
+        }
+    }
+}
+.ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-start .ant-picker-cell-inner,
+.ant-picker-cell-in-view.ant-picker-cell-range-end .ant-picker-cell-inner {
+    color: #fff;
+    background: var(--main-accent);
+}
+.ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
+    border: 1px solid var(--main-accent);
+}
+.ant-picker-now-btn {
+    display: none;
+}
+.ant-picker-time-panel-column > li.ant-picker-time-panel-cell-selected .ant-picker-time-panel-cell-inner {
+    background-color: var(--main-accent);
+    color: white;
+}
+.ant-btn.ant-btn-primary.ant-btn-sm {
+    background: none;
+    border-color: var(--main-accent) !important;
+    background: var(--main-accent) !important ;
+}
+.ant-picker-input {
+    border-bottom: 1px solid var(--main-dark-gray);
+}
+.ant-picker-clear {
+    opacity: 1;
+}
