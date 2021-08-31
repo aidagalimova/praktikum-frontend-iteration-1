@@ -1,0 +1,27 @@
+.car-model-div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -16px;
+    .model-text {
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--main-black);
+    }
+    .model-info-text {
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0em;
+        text-align: right;
+        color: var(--main-dark-gray);
+    }
+    .dots {
+        width: 42%;
+        margin-bottom: 8px;
+        background-image: linear-gradient(to right, var(--main-dark-gray) 20%, rgba(255, 255, 255, 0) 0%);
+        background-position: bottom;
+        background-size: 4px 1px;
+        background-repeat: repeat-x;
+    }
+}

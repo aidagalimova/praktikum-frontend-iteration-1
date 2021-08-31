@@ -1,0 +1,39 @@
+.location-divs {
+    display: flex;
+    justify-content: space-between;
+    height: 32px;
+    margin-bottom: 24px;
+    .point-div {
+        align-self: flex-end;
+        display: inline-block;
+        .point-text {
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: var(--main-black);
+        }
+    }
+    .dots {
+        width: 30%;
+        margin-bottom: 8px;
+        background-image: linear-gradient(to right, var(--main-dark-gray) 20%, rgba(255, 255, 255, 0) 0%);
+        background-position: bottom;
+        background-size: 4px 1px;
+        background-repeat: repeat-x;
+    }
+
+    .location-div {
+        display: inline-block;
+        margin-top: -7px;
+        margin-bottom: 56px;
+        .location-text {
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0em;
+            text-align: right;
+            color: var(--main-dark-gray);
+            margin-bottom: 0px;
+        }
+    }
+}
