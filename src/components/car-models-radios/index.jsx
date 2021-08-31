@@ -11,13 +11,13 @@ function Radios({ handleRadioChange, radioValue }) {
         defaultValue="all"
       >
         <Radio value="all">
-          <h3 className="radio-text">Все модели</h3>
+          <h3 className="radio-text light">Все модели</h3>
         </Radio>
         <Radio value="economy">
-          <h3 className="radio-text">Эконом</h3>
+          <h3 className="radio-text light">Эконом</h3>
         </Radio>
         <Radio value="premium">
-          <h3 className="radio-text">Премиум</h3>
+          <h3 className="radio-text light">Премиум</h3>
         </Radio>
       </Radio.Group>
     </div>
