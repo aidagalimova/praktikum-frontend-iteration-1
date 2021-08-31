@@ -22,6 +22,11 @@
       color: white;
       margin-top: 0.3em;
     }
+    &-disabled{
+      background: var(--main-light-gray);
+      cursor: default; 
+      filter: none !important;
+    }
   }
 
   .bold {
