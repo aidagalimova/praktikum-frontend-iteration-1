@@ -1,17 +1,32 @@
 .rental-period-div {
     max-width: 224px;
-    .date-picker {
-        width: 224px;
-        padding-left: 0;
-        .ant-picker-input input::placeholder {
-            color: var(--main-dark-gray);
-            font-family: "RobotoLight";
-            font-size: 14px;
-            line-height: 16px;
-            letter-spacing: 0em;
+    .date-picker-div {
+        display: flex;
+        .text-div {
+            width: 16px;
+            margin-right: 8px;
+            .date-picker-text {
+                font-size: 14px;
+                line-height: 16px;
+                letter-spacing: 0em;
+                text-align: left;
+                margin-top: 8px;
+                text-align-last: right;
+            }
         }
-        .ant-picker-input{
-            padding-left: 8px;
+        .date-picker {
+            width: 224px;
+            padding-left: 0;
+            .ant-picker-input input::placeholder {
+                color: var(--main-dark-gray);
+                font-family: "RobotoLight";
+                font-size: 14px;
+                line-height: 16px;
+                letter-spacing: 0em;
+            }
+            .ant-picker-input {
+                padding-left: 8px;
+            }
         }
     }
 }

@@ -51,33 +51,43 @@ function RentalPeriodInput({ handleDateChange }) {
 
   return (
     <div className="rental-period-div">
-      <DatePicker
-        className="date-picker"
-        showTime={{ format: "HH" }}
-        format="DD.MM.YYYY HH:00"
-        onOk={toSetStartDate}
-        bordered={false}
-        placeholder="Введите дату и время"
-        locale={locale}
-        suffixIcon={null}
-        clearIcon={<Cross />}
-        disabledDate={disabledStartDate}
-        allowClear
-      />
-      <DatePicker
-        className="date-picker"
-        showTime={{ format: "HH" }}
-        format="DD.MM.YYYY HH:00"
-        onOk={toSetEndDate}
-        bordered={false}
-        placeholder="Введите дату и время"
-        locale={locale}
-        suffixIcon={null}
-        clearIcon={<Cross />}
-        disabledDate={disabledEndDate}
-        value={date.end}
-        allowClear
-      />
+      <div className="date-picker-div">
+        <div className="text-div">
+          <h3 className="date-picker-text light">С</h3>
+        </div>
+        <DatePicker
+          className="date-picker"
+          showTime={{ format: "HH" }}
+          format="DD.MM.YYYY HH:00"
+          onOk={toSetStartDate}
+          bordered={false}
+          placeholder="Введите дату и время"
+          locale={locale}
+          suffixIcon={null}
+          clearIcon={<Cross />}
+          disabledDate={disabledStartDate}
+          allowClear
+        />
+      </div>
+      <div className="date-picker-div">
+        <div className="text-div">
+          <h3 className="date-picker-text light">По</h3>
+        </div>
+        <DatePicker
+          className="date-picker"
+          showTime={{ format: "HH" }}
+          format="DD.MM.YYYY HH:00"
+          onOk={toSetEndDate}
+          bordered={false}
+          placeholder="Введите дату и время"
+          locale={locale}
+          suffixIcon={null}
+          clearIcon={<Cross />}
+          disabledDate={disabledEndDate}
+          value={date.end}
+          allowClear
+        />
+      </div>
     </div>
   );
 }
