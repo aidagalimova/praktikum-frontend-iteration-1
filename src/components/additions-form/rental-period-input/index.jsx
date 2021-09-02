@@ -1,4 +1,4 @@
-import React  from "react";
+import React, { useState } from "react";
 import moment from "moment";
 import { DatePicker } from "antd";
 import "moment/locale/ru";
@@ -6,17 +6,47 @@ import locale from "antd/es/date-picker/locale/ru_RU";
 import { ReactComponent as Cross } from "../../../assets/svg/input-cross.svg";
 import "./index.scss";
 
-function RentalPeriodInput() {
+function RentalPeriodInput({ handleDateChange }) {
+  const [date, setDate] = useState({
+    start: null,
+    end: null,
+  });
 
   function disabledStartDate(current) {
     return moment().add(-1, "days") >= current;
   }
+
   function disabledEndDate(current) {
-    return moment().add(-1, "days") >= current;
+    if (!date.start) {
+      return moment().add(-1, "days") >= current;
+    }
+    return date.start >= current;
   }
 
-  function onOk(value) {
-    console.log(value);
+  function toSetStartDate(value) {
+    if (value >= date.end) {
+      setDate({
+        start: value.startOf("hour"),
+        end: null,
+      });
+    } else {
+      setDate({
+        ...date,
+        start: value.startOf("hour"),
+      });
+      if (date.end) {
+        const duration = moment.duration(date.end.diff(value.startOf("hour")));
+        handleDateChange(duration);
+      }
+    }
+  }
+
+  function toSetEndDate(value) {
+    setDate({ ...date, end: value.startOf("hour") });
+    if (date.start) {
+      const duration = moment.duration(value.startOf("hour").diff(date.start));
+      handleDateChange(duration);
+    }
   }
 
   return (
@@ -25,26 +55,28 @@ function RentalPeriodInput() {
         className="date-picker"
         showTime={{ format: "HH" }}
         format="DD.MM.YYYY HH:00"
-        onOk={onOk}
+        onOk={toSetStartDate}
         bordered={false}
         placeholder="Введите дату и время"
         locale={locale}
         suffixIcon={null}
         clearIcon={<Cross />}
         disabledDate={disabledStartDate}
-        disabledTime={disabledStartDate}
+        allowClear
       />
       <DatePicker
         className="date-picker"
         showTime={{ format: "HH" }}
         format="DD.MM.YYYY HH:00"
-        onOk={onOk}
+        onOk={toSetEndDate}
         bordered={false}
         placeholder="Введите дату и время"
         locale={locale}
         suffixIcon={null}
         clearIcon={<Cross />}
         disabledDate={disabledEndDate}
+        value={date.end}
+        allowClear
       />
     </div>
   );

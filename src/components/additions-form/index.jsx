@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 import ColorRadios from "./color-radios";
 import RentalPeriodInput from "./rental-period-input";
@@ -12,18 +11,15 @@ function AdditionsForm({
   handleTariffChange,
   handleServicesChange,
   color,
-  tariff,
-  services,
-  date,
+  tariff
 }) {
-
   return (
     <div className="additions-div">
       <h3 className="title light">Цвет</h3>
       <ColorRadios handleRadioChange={handleColorChange} radioValue={color} />
 
       <h3 className="title light">Дата аренды</h3>
-      <RentalPeriodInput />
+      <RentalPeriodInput handleDateChange={handleDateChange} />
 
       <h3 className="title light">Тариф</h3>
       <TariffRadios

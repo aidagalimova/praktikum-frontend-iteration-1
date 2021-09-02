@@ -36,7 +36,7 @@ function OrderInfo({ info, onStepChange, curStep }) {
         (curStep === 2 && (
           <NextButton
             btnText="Итого"
-            info={info.tariff}
+            info={info.date}
             onStepChange={() => {
               onStepChange(3);
             }}

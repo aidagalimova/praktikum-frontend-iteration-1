@@ -12,7 +12,6 @@ import "./index.scss";
 
 function MakeOrderPage() {
   const [curStep, setCurStep] = useState(2);
-
   const onStepChange = (cur) => {
     setCurStep(cur);
   };
@@ -41,8 +40,18 @@ function MakeOrderPage() {
   const handleColorChange = (e) => {
     setOrder({ ...order, color: e.target.value });
   };
-  const handleDateChange = (e) => {
-    setOrder({ ...order, date: e.target.value });
+
+  const handleDateChange = (date) => {
+    const duration = [];
+    if (date.asHours() >= 24) {
+      duration[0] = Math.floor(date.asDays());
+      if (date.asHours() % 24 !== 0) {
+        duration[1] = date.asHours() % 24;
+      }
+    } else {
+      duration[1] = date.asHours() % 24;
+    }
+    setOrder({ ...order, date: duration});
   };
   const handleTariffChange = (e) => {
     setOrder({ ...order, tariff: e.target.value });
@@ -98,6 +107,7 @@ function MakeOrderPage() {
                       handleServicesChange={handleServicesChange}
                       color={order.color}
                       tariff={order.tariff}
+                      date={order.date}
                     />
                   ))}
               </Col>

@@ -10,7 +10,15 @@
             text-align: left;
         }
         .dots {
-            width: 42%;
+            width: 40%;
+            margin-bottom: 16px;
+            background-image: linear-gradient(to right, var(--main-dark-gray) 20%, rgba(255, 255, 255, 0) 0%);
+            background-position: bottom;
+            background-size: 4px 1px;
+            background-repeat: repeat-x;
+        }
+        .date-dots {
+            width: 10%;
             margin-bottom: 16px;
             background-image: linear-gradient(to right, var(--main-dark-gray) 20%, rgba(255, 255, 255, 0) 0%);
             background-position: bottom;
@@ -20,5 +28,19 @@
         .right {
             color: var(--main-dark-gray);
         }
+        .days {
+            margin-right: -16px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .additions-divs .addition-div .days{
+        margin-right: -74px;
+    }
+}
+@media (max-width: 420px) {
+    .additions-divs .addition-div .days{
+        margin-right: -40px;
     }
 }
