@@ -1,6 +1,7 @@
 import React from "react";
 import LocationInfo from "./location-info";
 import CarModelInfo from "./car-model-info";
+import AdditionsInfo from "./addotions-info";
 import PriceInfo from "./price-info";
 import "./index.scss";
 import NextButton from "./next-button";
@@ -11,9 +12,10 @@ function OrderInfo({ info, onStepChange, curStep }) {
       <h2 className="title medium">Ваш заказ:</h2>
       <LocationInfo info={info} />
       <CarModelInfo info={info} curStep={curStep} />
+      <AdditionsInfo info={info} curStep={curStep} />
       <PriceInfo info={info} />
 
-      {curStep === 0 ? (
+      {curStep === 0 && (
         <NextButton
           btnText="Выбрать модель"
           info={info.point}
@@ -21,11 +23,8 @@ function OrderInfo({ info, onStepChange, curStep }) {
             onStepChange(1);
           }}
         />
-      ) : (
-        <></>
       )}
-
-      {curStep === 1 ? (
+      {curStep === 1 && (
         <NextButton
           btnText="Дополнительно"
           info={info.selectedCar}
@@ -33,23 +32,17 @@ function OrderInfo({ info, onStepChange, curStep }) {
             onStepChange(2);
           }}
         />
-      ) : (
-        <></>
       )}
-
-      {curStep === 2 ? (
+      {curStep === 2 && (
         <NextButton
           btnText="Итого"
-          info={info.tariff}
+          info={info.date}
           onStepChange={() => {
             onStepChange(3);
           }}
         />
-      ) : (
-        <></>
       )}
-
-      {curStep === 3 ? (
+      {curStep === 3 && (
         <NextButton
           btnText="Заказать"
           info={info.point}
@@ -57,8 +50,6 @@ function OrderInfo({ info, onStepChange, curStep }) {
             onStepChange(1);
           }}
         />
-      ) : (
-        <></>
       )}
     </div>
   );
