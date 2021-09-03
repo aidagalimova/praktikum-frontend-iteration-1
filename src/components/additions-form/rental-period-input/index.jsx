@@ -49,6 +49,20 @@ function RentalPeriodInput({ handleDateChange }) {
     }
   }
 
+  const clean = () => {
+    setDate({ ...date, end: null });
+  };
+
+  const props = {
+    className: "date-picker",
+    showTime: { format: "HH" },
+    format: "DD.MM.YYYY HH:00",
+    bordered: false,
+    placeholder: "Введите дату и время",
+    locale: { locale },
+    suffixIcon: null,
+    allowClear: true,
+  };
   return (
     <div className="rental-period-div">
       <div className="date-picker-div">
@@ -56,17 +70,11 @@ function RentalPeriodInput({ handleDateChange }) {
           <h3 className="date-picker-text light">С</h3>
         </div>
         <DatePicker
-          className="date-picker"
-          showTime={{ format: "HH" }}
-          format="DD.MM.YYYY HH:00"
           onOk={toSetStartDate}
-          bordered={false}
-          placeholder="Введите дату и время"
-          locale={locale}
-          suffixIcon={null}
           clearIcon={<Cross />}
           disabledDate={disabledStartDate}
-          allowClear
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...props}
         />
       </div>
       <div className="date-picker-div">
@@ -74,18 +82,12 @@ function RentalPeriodInput({ handleDateChange }) {
           <h3 className="date-picker-text light">По</h3>
         </div>
         <DatePicker
-          className="date-picker"
-          showTime={{ format: "HH" }}
-          format="DD.MM.YYYY HH:00"
           onOk={toSetEndDate}
-          bordered={false}
-          placeholder="Введите дату и время"
-          locale={locale}
-          suffixIcon={null}
-          clearIcon={<Cross />}
+          clearIcon={<Cross onClick={clean} />}
           disabledDate={disabledEndDate}
           value={date.end}
-          allowClear
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...props}
         />
       </div>
     </div>
