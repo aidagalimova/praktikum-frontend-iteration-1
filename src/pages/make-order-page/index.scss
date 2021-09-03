@@ -24,7 +24,8 @@
             position: sticky;
             background-color: white;
             z-index: 5;
-            top: 0px;
+            top: -1px;
+            margin-top: -17px;
         }
     }
 }
