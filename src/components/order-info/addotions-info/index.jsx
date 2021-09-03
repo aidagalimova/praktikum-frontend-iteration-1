@@ -17,15 +17,15 @@ function AdditionsInfo({ info, curStep }) {
             <div className="addition-div">
               <h3 className="text date light">Длительность аренды </h3>
               <div className="date-dots" />
-              {(info.date[0] && info.date[1]) &&(
+              {info.date[0] && info.date[1] && (
                 <>
                   <h3 className="text light days right">{info.date[0]}д</h3>
                   <h3 className="text light right">{info.date[1]}ч</h3>
                 </>
-              ) ||
-                (info.date[0] && (
-                  <h3 className="text light right">{info.date[0]}д</h3>
-                )) ||
+              )}
+              {(info.date[0] && (
+                <h3 className="text light right">{info.date[0]}д</h3>
+              )) ||
                 (info.date[1] && (
                   <h3 className="text light right">{info.date[1]}ч</h3>
                 ))}

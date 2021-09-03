@@ -15,7 +15,7 @@ function OrderInfo({ info, onStepChange, curStep }) {
       <AdditionsInfo info={info} curStep={curStep} />
       <PriceInfo info={info} />
 
-      {(curStep === 0 && (
+      {curStep === 0 && (
         <NextButton
           btnText="Выбрать модель"
           info={info.point}
@@ -23,34 +23,34 @@ function OrderInfo({ info, onStepChange, curStep }) {
             onStepChange(1);
           }}
         />
-      )) ||
-        (curStep === 1 && (
-          <NextButton
-            btnText="Дополнительно"
-            info={info.selectedCar}
-            onStepChange={() => {
-              onStepChange(2);
-            }}
-          />
-        )) ||
-        (curStep === 2 && (
-          <NextButton
-            btnText="Итого"
-            info={info.date}
-            onStepChange={() => {
-              onStepChange(3);
-            }}
-          />
-        )) ||
-        (curStep === 3 && (
-          <NextButton
-            btnText="Заказать"
-            info={info.point}
-            onStepChange={() => {
-              onStepChange(1);
-            }}
-          />
-        ))}
+      )}
+      {curStep === 1 && (
+        <NextButton
+          btnText="Дополнительно"
+          info={info.selectedCar}
+          onStepChange={() => {
+            onStepChange(2);
+          }}
+        />
+      )}
+      {curStep === 2 && (
+        <NextButton
+          btnText="Итого"
+          info={info.date}
+          onStepChange={() => {
+            onStepChange(3);
+          }}
+        />
+      )}
+      {curStep === 3 && (
+        <NextButton
+          btnText="Заказать"
+          info={info.point}
+          onStepChange={() => {
+            onStepChange(1);
+          }}
+        />
+      )}
     </div>
   );
 }

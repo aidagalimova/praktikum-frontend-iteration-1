@@ -51,7 +51,7 @@ function MakeOrderPage() {
     } else {
       duration[1] = date.asHours() % 24;
     }
-    setOrder({ ...order, date: duration});
+    setOrder({ ...order, date: duration });
   };
   const handleTariffChange = (e) => {
     setOrder({ ...order, tariff: e.target.value });
@@ -80,7 +80,7 @@ function MakeOrderPage() {
             </div>
             <Row className="location-info-row">
               <Col flex="0 0 900px" className="location-form-col">
-                {(curStep === 0 && (
+                {curStep === 0 && (
                   <LocationForm
                     order={{
                       city: order.city,
@@ -91,25 +91,25 @@ function MakeOrderPage() {
                     handlePointChange={handlePointChange}
                     locations={locations}
                   />
-                )) ||
-                  (curStep === 1 && (
-                    <CarModels
-                      cars={cars}
-                      selectedCar={order.selectedCar}
-                      handleCarModelChange={handleCarModelChange}
-                    />
-                  )) ||
-                  (curStep === 2 && (
-                    <AdditionsForm
-                      handleColorChange={handleColorChange}
-                      handleDateChange={handleDateChange}
-                      handleTariffChange={handleTariffChange}
-                      handleServicesChange={handleServicesChange}
-                      color={order.color}
-                      tariff={order.tariff}
-                      date={order.date}
-                    />
-                  ))}
+                )}
+                {curStep === 1 && (
+                  <CarModels
+                    cars={cars}
+                    selectedCar={order.selectedCar}
+                    handleCarModelChange={handleCarModelChange}
+                  />
+                )}
+                {curStep === 2 && (
+                  <AdditionsForm
+                    handleColorChange={handleColorChange}
+                    handleDateChange={handleDateChange}
+                    handleTariffChange={handleTariffChange}
+                    handleServicesChange={handleServicesChange}
+                    color={order.color}
+                    tariff={order.tariff}
+                    date={order.date}
+                  />
+                )}
               </Col>
               <Col className="order-info-col">
                 <OrderInfo
