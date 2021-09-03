@@ -1,0 +1,63 @@
+.car {
+    display: flex;
+    align-items: flex-end;
+    &-text {
+        flex: 0 0 60%;
+        .car-name {
+            margin-top: 32px;
+            margin-bottom: 8px;
+            font-size: 18px;
+            line-height: 21px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+        .car-number {
+            border: 1px solid var(--main-dark-gray);
+            border-radius: 4px;
+            width: 94px;
+            &-text {
+                font-size: 14px;
+                line-height: 16px;
+                letter-spacing: 0em;
+                margin: 4px;
+                text-align: center;
+            }
+            margin-bottom: 8px;
+        }
+
+        .discription {
+            display: flex;
+            margin-bottom: 6px;
+            &-text {
+                font-size: 14px;
+                line-height: 16px;
+                letter-spacing: 0em;
+                text-align: left;
+            }
+        }
+    }
+}
+
+@media (max-width: 888px) {
+    .car {
+        align-items: center;
+        &-text {
+            flex: 0 0 55%;
+        }
+        &-img .img {
+            width: 200px;
+        }
+    }
+}
+@media (max-width: 720px) {
+    .car {
+        &-img .img {
+            width: 180px;
+        }
+    }
+}
+@media (max-width: 420px) {
+    .car {
+        display: block;
+    }
+}

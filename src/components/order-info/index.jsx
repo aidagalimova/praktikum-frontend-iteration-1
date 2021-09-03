@@ -1,7 +1,7 @@
 import React from "react";
 import LocationInfo from "./location-info";
 import CarModelInfo from "./car-model-info";
-import AdditionsInfo from "./addotions-info";
+import AdditionsInfo from "./additions-info";
 import PriceInfo from "./price-info";
 import "./index.scss";
 import NextButton from "./next-button";

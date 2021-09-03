@@ -7,11 +7,12 @@ import LocationForm from "../../components/location-form";
 import OrderInfo from "../../components/order-info";
 import CarModels from "../../components/car-models";
 import AdditionsForm from "../../components/additions-form";
+import Total from "../../components/total-order";
 import locations, { cars } from "./consts";
 import "./index.scss";
 
 function MakeOrderPage() {
-  const [curStep, setCurStep] = useState(2);
+  const [curStep, setCurStep] = useState(3);
   const onStepChange = (cur) => {
     setCurStep(cur);
   };
@@ -109,7 +110,8 @@ function MakeOrderPage() {
                     tariff={order.tariff}
                     date={order.date}
                   />
-                )}
+                )}{" "}
+                {curStep === 3 && <Total />}
               </Col>
               <Col className="order-info-col">
                 <OrderInfo
