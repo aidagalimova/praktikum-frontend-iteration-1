@@ -10,6 +10,7 @@ import AdditionsForm from "../../components/additions-form";
 import Total from "../../components/total-order";
 import locations, { cars } from "./consts";
 import "./index.scss";
+import OrderConfirmation from "../../components/order-confirmation";
 
 function MakeOrderPage() {
   const [curStep, setCurStep] = useState(3);
@@ -63,6 +64,7 @@ function MakeOrderPage() {
 
   return (
     <div className="page">
+      {curStep === 4 && <OrderConfirmation />}
       <Sidebar isMain={false} />
       <div className="page-content">
         <Row justify="center">
@@ -110,8 +112,9 @@ function MakeOrderPage() {
                     tariff={order.tariff}
                     date={order.date}
                   />
-                )}{" "}
+                )}
                 {curStep === 3 && <Total />}
+                {curStep === 4 && <Total />}
               </Col>
               <Col className="order-info-col">
                 <OrderInfo

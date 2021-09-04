@@ -14,7 +14,6 @@ function OrderInfo({ info, onStepChange, curStep }) {
       <CarModelInfo info={info} curStep={curStep} />
       <AdditionsInfo info={info} curStep={curStep} />
       <PriceInfo info={info} />
-
       {curStep === 0 && (
         <NextButton
           btnText="Выбрать модель"
@@ -42,14 +41,16 @@ function OrderInfo({ info, onStepChange, curStep }) {
           }}
         />
       )}
-      {curStep === 3 && (
-        <NextButton
-          btnText="Заказать"
-          info={info.point}
-          onStepChange={() => {
-            onStepChange(1);
-          }}
-        />
+      {(curStep === 3 || curStep === 4) && (
+        <>
+          <NextButton
+            btnText="Заказать"
+            info={info.point}
+            onStepChange={() => {
+              onStepChange(4);
+            }}
+          />
+        </>
       )}
     </div>
   );
