@@ -64,7 +64,12 @@ function MakeOrderPage() {
 
   return (
     <div className="page">
-      {curStep === 4 && <OrderConfirmation />}
+      {curStep === 4 && (
+        <OrderConfirmation
+          toBack={() => setCurStep(3)}
+          toConform={() => setCurStep(5)}
+        />
+      )}
       <Sidebar isMain={false} />
       <div className="page-content">
         <Row justify="center">
