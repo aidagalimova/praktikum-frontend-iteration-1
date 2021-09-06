@@ -59,5 +59,8 @@
 @media (max-width: 420px) {
     .car {
         display: block;
+        &-img .img {
+            width: 320px;
+        }
     }
 }

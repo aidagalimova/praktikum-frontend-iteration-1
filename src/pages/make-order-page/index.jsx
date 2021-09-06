@@ -78,13 +78,13 @@ function MakeOrderPage() {
               <div className="header">
                 <MainPageHeader />
               </div>
-              <Divider />
+              <Divider className="top"/>
               <FormSteps
                 curStep={curStep}
                 onStepChange={onStepChange}
                 order={order}
               />
-              <Divider />
+              <Divider className="bottom"/>
             </div>
             <Row className="location-info-row">
               <Col flex="0 0 900px" className="location-form-col">
