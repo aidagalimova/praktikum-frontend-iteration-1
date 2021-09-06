@@ -7,11 +7,13 @@ import LocationForm from "../../components/location-form";
 import OrderInfo from "../../components/order-info";
 import CarModels from "../../components/car-models";
 import AdditionsForm from "../../components/additions-form";
+import Total from "../../components/total-order";
 import locations, { cars } from "./consts";
 import "./index.scss";
+import OrderConfirmation from "../../components/order-confirmation";
 
 function MakeOrderPage() {
-  const [curStep, setCurStep] = useState(2);
+  const [curStep, setCurStep] = useState(3);
   const onStepChange = (cur) => {
     setCurStep(cur);
   };
@@ -62,6 +64,12 @@ function MakeOrderPage() {
 
   return (
     <div className="page">
+      {curStep === 4 && (
+        <OrderConfirmation
+          toBack={() => setCurStep(3)}
+          toConform={() => setCurStep(5)}
+        />
+      )}
       <Sidebar isMain={false} />
       <div className="page-content">
         <Row justify="center">
@@ -70,13 +78,13 @@ function MakeOrderPage() {
               <div className="header">
                 <MainPageHeader />
               </div>
-              <Divider />
+              <Divider className="top"/>
               <FormSteps
                 curStep={curStep}
                 onStepChange={onStepChange}
                 order={order}
               />
-              <Divider />
+              <Divider className="bottom"/>
             </div>
             <Row className="location-info-row">
               <Col flex="0 0 900px" className="location-form-col">
@@ -110,6 +118,8 @@ function MakeOrderPage() {
                     date={order.date}
                   />
                 )}
+                {curStep === 3 && <Total />}
+                {curStep === 4 && <Total />}
               </Col>
               <Col className="order-info-col">
                 <OrderInfo
