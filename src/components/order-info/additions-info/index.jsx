@@ -13,7 +13,7 @@ function AdditionsInfo({ info, curStep, isOrderPage }) {
               <h3 className="text light right">{info.color}</h3>
             </div>
           )}
-          {info.date && (
+          {(info.date[0] || info.date[1]) && (
             <div className="addition-div">
               <h3 className="text date light">Длительность аренды </h3>
               <div className="date-dots" />

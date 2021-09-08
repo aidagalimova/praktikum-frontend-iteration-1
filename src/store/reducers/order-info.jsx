@@ -4,7 +4,7 @@ const initialState = {
   selectedCar: null,
   color: "Любой",
   tariff: "Поминутно",
-  date: null,
+  date: [],
   services: null,
 };
 export default function orderInfoReducer(state = initialState, action) {
@@ -59,7 +59,7 @@ export default function orderInfoReducer(state = initialState, action) {
         date: [],
         services: null,
       };
-      
+
     case "CLEAR_CAR_ADDITIONS":
       return {
         ...state,

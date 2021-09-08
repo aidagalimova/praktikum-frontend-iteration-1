@@ -1,8 +1,20 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import { Row } from "antd";
 import CarModel from "../car-model";
 import "./index.scss";
 import Radios from "../car-models-radios";
+import { carModelChange } from "../../store/actions/order-info";
+
+const mapStateToProps = (state) => ({
+  selectedCar: state.order.selectedCar,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  handleCarModelChange: (value) => {
+    dispatch(carModelChange(value));
+  },
+});
 
 function CarModels({ cars, handleCarModelChange, selectedCar }) {
   const [radioValue, setRadioValue] = useState("all");
@@ -39,4 +51,4 @@ function CarModels({ cars, handleCarModelChange, selectedCar }) {
   );
 }
 
-export default CarModels;
+export default connect(mapStateToProps, mapDispatchToProps)(CarModels);

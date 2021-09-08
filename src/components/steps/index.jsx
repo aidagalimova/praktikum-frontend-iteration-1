@@ -1,10 +1,15 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Steps } from "antd";
 import "./index.scss";
 
 const { Step } = Steps;
+const mapStateToProps = (state) => ({
+  order: state.order,
+  curStep: state.step,
+});
 
-function FormSteps({ curStep, onStepChange, order }) {
+function FormSteps({ curStep, order, onStepChange }) {
   return (
     <div>
       <Steps
@@ -36,11 +41,11 @@ function FormSteps({ curStep, onStepChange, order }) {
           className="step bold"
           icon={<></>}
           title="Итого"
-          disabled={curStep <= 3 && !order.date}
+          disabled={curStep <= 3 && order.date.length !== 2}
         />
       </Steps>
     </div>
   );
 }
 
-export default FormSteps;
+export default connect(mapStateToProps)(FormSteps);

@@ -1,11 +1,16 @@
 import React from "react";
-import { Button } from "antd";
+import { connect } from "react-redux";
 import LocationInfo from "./location-info";
 import CarModelInfo from "./car-model-info";
 import AdditionsInfo from "./additions-info";
 import PriceInfo from "./price-info";
 import "./index.scss";
 import NextButton from "./next-button";
+
+const mapStateToProps = (state) => ({
+  info: state.order,
+  curStep: state.step,
+});
 
 function OrderInfo({ info, onStepChange, curStep, isOrderPage }) {
   return (
@@ -36,7 +41,7 @@ function OrderInfo({ info, onStepChange, curStep, isOrderPage }) {
       {curStep === 2 && (
         <NextButton
           btnText="Итого"
-          info={info.date}
+          info={info.date.length === 2}
           onStepChange={() => {
             onStepChange(3);
           }}
@@ -53,12 +58,7 @@ function OrderInfo({ info, onStepChange, curStep, isOrderPage }) {
           />
         </>
       )}
-      {isOrderPage && (
-        <Button className="btn cancel">
-          <h3 className="btn-text">Отменить</h3>
-        </Button>
-      )}
     </div>
   );
 }
-export default OrderInfo;
+export default connect(mapStateToProps)(OrderInfo);

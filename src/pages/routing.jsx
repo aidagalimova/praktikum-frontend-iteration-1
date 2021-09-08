@@ -5,13 +5,13 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
-import OrderPage from "./order-page";
+import makeOrderPage from "./make-order-page";
 
 function Routing() {
   return (
     <Router>
       <Switch>
-        <Route path="/" component={OrderPage} exact />
+        <Route path="/" component={makeOrderPage} exact />
         <Redirect to="/" />
       </Switch>
     </Router>
