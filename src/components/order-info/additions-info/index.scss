@@ -29,18 +29,27 @@
             color: var(--main-dark-gray);
         }
         .days {
-            margin-right: -16px;
+            margin-right: -50px;
         }
     }
 }
-
-@media (max-width: 700px) {
+@media (max-width: 1440px) {
     .additions-divs .addition-div .days{
+        margin-right: -32px;
+    }
+}
+@media (max-width: 1240px) {
+    .additions-divs .addition-div .days{
+        margin-right: -16px;
+    }
+}
+@media (max-width: 700px) {
+    .additions-divs .addition-div .days {
         margin-right: -74px;
     }
 }
 @media (max-width: 420px) {
-    .additions-divs .addition-div .days{
+    .additions-divs .addition-div .days {
         margin-right: -40px;
     }
 }

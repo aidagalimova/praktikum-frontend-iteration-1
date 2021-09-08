@@ -11,6 +11,9 @@
         text-align: right;
         margin-bottom: 32px;
     }
+    .cancel {
+        background: linear-gradient(90deg, #493013 0%, #7b0c3b 100%);
+    }
 }
 
 @media (max-width: 1440px) {
@@ -26,13 +29,12 @@
 @media (max-width: 1240px) {
     .info-div {
         margin-right: 32px;
-        width: 276px;   
+        width: 276px;
         .car-model-div {
             .dots {
                 width: 20%;
             }
         }
-
     }
 }
 

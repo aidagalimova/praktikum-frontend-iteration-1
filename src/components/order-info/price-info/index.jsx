@@ -10,7 +10,7 @@ function PriceInfo({ info }) {
         <div className="price-dots " />
         <div>
           <h3 className="price regular">
-            {info.point ? "от 8 000 до 12 000 ₽" : "0 ₽"}
+            {info.point ? "8 000 ₽" : "0 ₽"}
           </h3>
         </div>
       </div>

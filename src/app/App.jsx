@@ -1,12 +1,12 @@
 import React from "react";
 import "antd/dist/antd.css";
 import "./App.scss";
-import MakeOrderPage from "../pages/make-order-page";
+import Routing from "../pages/routing";
 
 function App() {
   return (
     <div className="app">
-      <MakeOrderPage />
+      <Routing />
     </div>
   );
 }
