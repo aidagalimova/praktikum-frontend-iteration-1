@@ -37,6 +37,7 @@
 }
 .ant-divider-horizontal {
     top: 0;
+    left: 0;
     position: fixed;
     margin-left: -64px;
     width: -webkit-fill-available;
@@ -145,7 +146,7 @@
         margin-left: 10px;
     }
 }
-@media (max-width: 470px) {  
+@media (max-width: 470px) {
     .page .content-col .steps-div {
         .bottom {
             top: 180px;
@@ -160,5 +161,5 @@
     }
     .order-info-col {
         flex: 0 0 300px !important;
-    } 
+    }
 }
