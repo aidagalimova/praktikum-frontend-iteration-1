@@ -50,25 +50,6 @@ export default function orderInfoReducer(state = initialState, action) {
         ...state,
         services: action.payload.services,
       };
-
-    case "CLEAR_ADDITIONS":
-      return {
-        ...state,
-        color: "Любой",
-        tariff: "Поминутно",
-        date: [],
-        services: null,
-      };
-
-    case "CLEAR_CAR_ADDITIONS":
-      return {
-        ...state,
-        selectedCar: null,
-        color: "Любой",
-        tariff: "Поминутно",
-        date: [],
-        services: null,
-      };
     default:
       return state;
   }

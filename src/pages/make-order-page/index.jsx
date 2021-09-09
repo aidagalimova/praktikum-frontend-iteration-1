@@ -12,10 +12,6 @@ import Total from "../../components/total-order";
 import locations, { cars } from "./consts";
 import OrderConfirmation from "../../components/order-confirmation";
 import stepChange from "../../store/actions/steps";
-import {
-  clearAdditions,
-  clearCarAdditions,
-} from "../../store/actions/order-info";
 import "./index.scss";
 
 const mapStateToProps = (state) => ({
@@ -25,11 +21,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   handleStepChange: (value) => {
     dispatch(stepChange(value));
-    if (value === 0) {
-      dispatch(clearCarAdditions());
-    } else if (value === 1) {
-      dispatch(clearAdditions());
-    }
   },
 });
 

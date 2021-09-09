@@ -46,11 +46,3 @@ export const servicesChange = (value) => ({
     services: value,
   },
 });
-
-export const clearCarAdditions = () => ({
-  type: "CLEAR_CAR_ADDITIONS",
-});
-
-export const clearAdditions = () => ({
-  type: "CLEAR_ADDITIONS",
-});
