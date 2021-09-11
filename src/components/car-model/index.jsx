@@ -1,9 +1,17 @@
-import { Card } from "antd";
 import React from "react";
+import { Card } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { carModelChange } from "../../store/actions/order-info";
 import "./index.scss";
 
 const { Meta } = Card;
-function CarModel({ car, handleCarModelChange, selectedCar }) {
+function CarModel({ car }) {  
+  const dispatch = useDispatch();
+  const selectedCar = useSelector((state) => state.order.selectedCar);
+
+  const handleCarModelChange = (value) => {
+    dispatch(carModelChange(value));
+  };
   return (
     <Card
       className={`model-card ${
