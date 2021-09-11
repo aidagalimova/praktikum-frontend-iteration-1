@@ -2,8 +2,8 @@ const initialState = {
   city: null,
   point: null,
   selectedCar: null,
-  color: "Любой",
-  tariff: "Поминутно",
+  color: null,
+  tariff: null,
   date: {
     start: null,
     end: null,
@@ -52,12 +52,18 @@ export default function orderInfoReducer(state = initialState, action) {
     case "CHANGE_DATE":
       return {
         ...state,
-        date: action.payload.date
+        date: action.payload.date,
       };
     case "CHANGE_SERVICES":
       return {
         ...state,
         services: action.payload.services,
+      };
+    case "SET_COLOR_AND_TARIFF":
+      return {
+        ...state,
+        color: "Любой",
+        tariff: "Поминутно",
       };
     default:
       return state;

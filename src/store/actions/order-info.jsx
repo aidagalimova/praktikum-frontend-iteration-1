@@ -40,7 +40,7 @@ export const dateChange = (dateStart, dateEnd) => ({
   payload: {
     date: {
       start: dateStart,
-      end: dateEnd
+      end: dateEnd,
     },
   },
 });
@@ -57,4 +57,7 @@ export const servicesChange = (value) => ({
   payload: {
     services: value,
   },
+});
+export const colorAndTariffSet = () => ({
+  type: "SET_COLOR_AND_TARIFF",
 });

@@ -12,13 +12,13 @@ const mapStateToProps = (state) => ({
   curStep: state.step,
 });
 
-function OrderInfo({ info, onStepChange, curStep, isOrderPage }) {
+function OrderInfo({ info, onStepChange, curStep }) {
   return (
     <div className="info-div">
       <h2 className="title medium">Ваш заказ:</h2>
       <LocationInfo info={info} />
-      <CarModelInfo info={info} curStep={curStep} isOrderPage={isOrderPage} />
-      <AdditionsInfo info={info} curStep={curStep} isOrderPage={isOrderPage} />
+      <CarModelInfo info={info} />
+      <AdditionsInfo info={info} curStep={curStep} />
       <PriceInfo info={info} />
       {curStep === 0 && (
         <NextButton
