@@ -41,7 +41,7 @@ function OrderInfo({ info, onStepChange, curStep, isOrderPage }) {
       {curStep === 2 && (
         <NextButton
           btnText="Итого"
-          info={info.date.length === 2}
+          info={info.duration.length !== 0}
           onStepChange={() => {
             onStepChange(3);
           }}

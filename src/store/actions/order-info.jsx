@@ -26,10 +26,22 @@ export const colorChange = (value) => ({
   },
 });
 
-export const dateChange = (value) => ({
+export const dateDuartionChange = (dateDuration) => ({
+  type: "CHANGE_DATE_DURATION",
+  payload: {
+    date: {
+      duration: dateDuration,
+    },
+  },
+});
+
+export const dateChange = (dateStart, dateEnd) => ({
   type: "CHANGE_DATE",
   payload: {
-    date: value,
+    date: {
+      start: dateStart,
+      end: dateEnd
+    },
   },
 });
 

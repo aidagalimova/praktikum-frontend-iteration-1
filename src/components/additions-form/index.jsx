@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import {
   colorChange,
   tariffChange,
-  dateChange,
-  servicesChange,
+  servicesChange
 } from "../../store/actions/order-info";
 import ColorRadios from "./color-radios";
 import RentalPeriodInput from "./rental-period-input";
@@ -21,18 +20,6 @@ const mapDispatchToProps = (dispatch) => ({
   handleColorChange: (e) => {
     dispatch(colorChange(e.target.value));
   },
-  handleDateChange: (date) => {
-    const duration = [];
-    if (date.asHours() >= 24) {
-      duration[0] = Math.floor(date.asDays());
-      if (date.asHours() % 24 !== 0) {
-        duration[1] = date.asHours() % 24;
-      }
-    } else {
-      duration[1] = date.asHours() % 24;
-    }
-    dispatch(dateChange(duration));
-  },
   handleTariffChange: (e) => {
     dispatch(tariffChange(e.target.value));
   },
@@ -43,7 +30,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 function AdditionsForm({
   handleColorChange,
-  handleDateChange,
+  handleDurationChange,
   handleTariffChange,
   handleServicesChange,
   color,
@@ -55,7 +42,7 @@ function AdditionsForm({
       <ColorRadios handleRadioChange={handleColorChange} radioValue={color} />
 
       <h3 className="title light">Дата аренды</h3>
-      <RentalPeriodInput handleDateChange={handleDateChange} />
+      <RentalPeriodInput handleDurationChange={handleDurationChange} />
 
       <h3 className="title light">Тариф</h3>
       <TariffRadios

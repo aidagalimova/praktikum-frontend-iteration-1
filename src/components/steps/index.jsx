@@ -41,7 +41,7 @@ function FormSteps({ curStep, order, onStepChange }) {
           className="step bold"
           icon={<></>}
           title="Итого"
-          disabled={curStep <= 3 && order.date.length !== 2}
+          disabled={curStep <= 3 && order.duration.length !== 2}
         />
       </Steps>
     </div>
