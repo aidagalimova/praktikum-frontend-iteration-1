@@ -2,34 +2,24 @@
 
 import React from "react";
 import { Form, Select } from "antd";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import map from "../../assets/image/map.png";
 import { cityChange, pointChange } from "../../store/actions/order-info";
 import "./index.scss";
 
 const { Option } = Select;
 
-const mapStateToProps = (state) => ({
-  city: state.order.city,
-  point: state.order.point,
-});
+function LocationForm({ locations }) {
+  const dispatch = useDispatch();
+  const point = useSelector((state) => state.order.point);
+  const city = useSelector((state) => state.order.city);
 
-const mapDispatchToProps = (dispatch) => ({
-  handleCityChange: (value) => {
+  const handleCityChange = (value) => {
     dispatch(cityChange(value));
-  },
-  handlePointChange: (value) => {
+  };
+  const handlePointChange = (value) => {
     dispatch(pointChange(value));
-  },
-});
-
-function LocationForm({
-  handleCityChange,
-  handlePointChange,
-  point,
-  city,
-  locations,
-}) {
+  };
   const cities = () =>
     locations.map((location) => (
       <Option key={location.id} value={location.city}>
@@ -88,4 +78,4 @@ function LocationForm({
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LocationForm);
+export default LocationForm;

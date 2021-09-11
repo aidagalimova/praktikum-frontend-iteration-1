@@ -1,15 +1,14 @@
 import React from "react";
-import { connect } from "react-redux";
 import { Steps } from "antd";
 import "./index.scss";
+import { useSelector } from "react-redux";
 
 const { Step } = Steps;
-const mapStateToProps = (state) => ({
-  order: state.order,
-  curStep: state.step,
-});
 
-function FormSteps({ curStep, order, onStepChange }) {
+function FormSteps({onStepChange }) {
+  const order = useSelector(state => state.order);
+  const curStep = useSelector(state => state.step)
+
   return (
     <div>
       <Steps
@@ -48,4 +47,4 @@ function FormSteps({ curStep, order, onStepChange }) {
   );
 }
 
-export default connect(mapStateToProps)(FormSteps);
+export default FormSteps;

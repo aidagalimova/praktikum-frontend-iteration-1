@@ -1,24 +1,18 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Row } from "antd";
 import CarModel from "../car-model";
 import "./index.scss";
 import Radios from "../car-models-radios";
 import { carModelChange } from "../../store/actions/order-info";
 
-const mapStateToProps = (state) => ({
-  selectedCar: state.order.selectedCar,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  handleCarModelChange: (value) => {
-    dispatch(carModelChange(value));
-  },
-});
-
-function CarModels({ cars, handleCarModelChange, selectedCar }) {
+function CarModels({ cars }) {
+  const dispatch = useDispatch();
+  const selectedCar = useSelector((state) => state.order.selectedCar);
   const [radioValue, setRadioValue] = useState("all");
-
+  const handleCarModelChange = (value) => {
+    dispatch(carModelChange(value));
+  };
   const carEls = cars
     .filter((car) => {
       if (radioValue === "all") {
@@ -51,4 +45,4 @@ function CarModels({ cars, handleCarModelChange, selectedCar }) {
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CarModels);
+export default CarModels;

@@ -1,17 +1,14 @@
 import React, { useEffect } from "react";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import { colorAndTariffSet } from "../../../store/actions/order-info";
 import "./index.scss";
 
-const mapDispatchToProps = (dispatch) => ({
-  ColorTariffSet: () => {
-    dispatch(colorAndTariffSet());
-  },
-});
-function AdditionsInfo({ info, curStep, ColorTariffSet }) {
+function AdditionsInfo({ info, curStep }) {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     if (!info.color && curStep === 2) {
-      ColorTariffSet();
+      dispatch(colorAndTariffSet());
     }
   }, [curStep === 2]);
   return (
@@ -66,4 +63,4 @@ function AdditionsInfo({ info, curStep, ColorTariffSet }) {
   );
 }
 
-export default connect(null, mapDispatchToProps)(AdditionsInfo);
+export default AdditionsInfo;

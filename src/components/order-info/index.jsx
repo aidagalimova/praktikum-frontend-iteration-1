@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import LocationInfo from "./location-info";
 import CarModelInfo from "./car-model-info";
 import AdditionsInfo from "./additions-info";
@@ -7,12 +7,10 @@ import PriceInfo from "./price-info";
 import "./index.scss";
 import NextButton from "./next-button";
 
-const mapStateToProps = (state) => ({
-  info: state.order,
-  curStep: state.step,
-});
-
-function OrderInfo({ info, onStepChange, curStep }) {
+function OrderInfo({ onStepChange }) {
+  const info = useSelector((state) => state.order);
+  const curStep = useSelector((state) => state.step);
+ 
   return (
     <div className="info-div">
       <h2 className="title medium">Ваш заказ:</h2>
@@ -61,4 +59,4 @@ function OrderInfo({ info, onStepChange, curStep }) {
     </div>
   );
 }
-export default connect(mapStateToProps)(OrderInfo);
+export default OrderInfo;

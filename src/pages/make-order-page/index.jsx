@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Divider, Col, Row } from "antd";
 import FormSteps from "../../components/steps";
 import Sidebar from "../../components/sidebar";
@@ -14,23 +14,19 @@ import OrderConfirmation from "../../components/order-confirmation";
 import stepChange from "../../store/actions/steps";
 import "./index.scss";
 
-const mapStateToProps = (state) => ({
-  step: state.step,
-});
+function MakeOrderPage() {
+  const dispatch = useDispatch();
+  const step = useSelector((state) => state.step);
 
-const mapDispatchToProps = (dispatch) => ({
-  handleStepChange: (value) => {
+  const handleStepChange = (value) => {
     dispatch(stepChange(value));
-  },
-});
-
-function MakeOrderPage({ step, handleStepChange }) {
+  };
   return (
     <div className="page">
       {step === 4 && (
         <OrderConfirmation
-          toBack={() => handleStepChange(3)}
-          toConform={() => handleStepChange(5)}
+          toBack={() => dispatch(stepChange(3))}
+          toConform={() => dispatch(stepChange(5))}
         />
       )}
       <Sidebar isMain={false} />
@@ -63,4 +59,4 @@ function MakeOrderPage({ step, handleStepChange }) {
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MakeOrderPage);
+export default MakeOrderPage;
