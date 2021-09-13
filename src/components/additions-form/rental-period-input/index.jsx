@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
 import { DatePicker } from "antd";
 import "moment/locale/ru";
@@ -11,31 +11,29 @@ import {
 } from "../../../store/actions/order-info";
 import "./index.scss";
 
-const mapStateToProps = (state) => ({
-  date: state.order.date,
-});
+function RentalPeriodInput() {
+  const dispatch = useDispatch();
+  const date = useSelector((state) => state.order.date);
 
-const mapDispatchToProps = (dispatch) => ({
-  handleDateChange: (start, end) => {
+  const handleDateChange = (start, end) => {
     dispatch(dateChange(start, end));
-  },
-  handleDurationChange: (date) => {
+  };
+
+  const handleDurationChange = (dateDuration) => {
     const duration = [];
-    if (date) {
-      if (date.asHours() >= 24) {
-        duration[0] = Math.floor(date.asDays());
-        if (date.asHours() % 24 !== 0) {
-          duration[1] = date.asHours() % 24;
+    if (dateDuration) {
+      if (dateDuration.asHours() >= 24) {
+        duration[0] = Math.floor(dateDuration.asDays());
+        if (dateDuration.asHours() % 24 !== 0) {
+          duration[1] = dateDuration.asHours() % 24;
         }
       } else {
-        duration[1] = date.asHours() % 24;
+        duration[1] = dateDuration.asHours() % 24;
       }
     }
     dispatch(dateDuartionChange(duration));
-  },
-});
+  };
 
-function RentalPeriodInput({ date, handleDurationChange, handleDateChange }) {
   function disabledStartDate(current) {
     return moment().add(-1, "days") >= current;
   }
@@ -118,4 +116,4 @@ function RentalPeriodInput({ date, handleDurationChange, handleDateChange }) {
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RentalPeriodInput);
+export default RentalPeriodInput;

@@ -11,8 +11,7 @@ const { Option } = Select;
 
 function LocationForm({ locations }) {
   const dispatch = useDispatch();
-  const point = useSelector((state) => state.order.point);
-  const city = useSelector((state) => state.order.city);
+  const {point, city} = useSelector((state) => state.order.point);
 
   const handleCityChange = (value) => {
     dispatch(cityChange(value));
