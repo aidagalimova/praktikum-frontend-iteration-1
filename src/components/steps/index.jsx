@@ -1,10 +1,14 @@
 import React from "react";
 import { Steps } from "antd";
 import "./index.scss";
+import { useSelector } from "react-redux";
 
 const { Step } = Steps;
 
-function FormSteps({ curStep, onStepChange, order }) {
+function FormSteps({onStepChange }) {
+  const order = useSelector(state => state.order);
+  const curStep = useSelector(state => state.step)
+
   return (
     <div>
       <Steps
@@ -36,7 +40,7 @@ function FormSteps({ curStep, onStepChange, order }) {
           className="step bold"
           icon={<></>}
           title="Итого"
-          disabled={curStep <= 3 && !order.date}
+          disabled={curStep <= 3 && !order.duration.length}
         />
       </Steps>
     </div>

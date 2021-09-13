@@ -4,7 +4,7 @@ import CarModel from "../car-model";
 import "./index.scss";
 import Radios from "../car-models-radios";
 
-function CarModels({ cars, handleCarModelChange, selectedCar }) {
+function CarModels({ cars }) {
   const [radioValue, setRadioValue] = useState("all");
 
   const carEls = cars
@@ -17,15 +17,7 @@ function CarModels({ cars, handleCarModelChange, selectedCar }) {
       }
       return car.type === "premium";
     })
-    .map((car) => (
-      <CarModel
-        key={car.id}
-        car={car}
-        handleCarModelChange={handleCarModelChange}
-        selectedCar={selectedCar}
-        radioValue={radioValue}
-      />
-    ));
+    .map((car) => <CarModel key={car.id} car={car} radioValue={radioValue} />);
 
   const handleRadioChange = (e) => {
     setRadioValue(e.target.value);

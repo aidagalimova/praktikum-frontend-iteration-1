@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Divider, Col, Row } from "antd";
 import FormSteps from "../../components/steps";
 import Sidebar from "../../components/sidebar";
@@ -9,65 +10,23 @@ import CarModels from "../../components/car-models";
 import AdditionsForm from "../../components/additions-form";
 import Total from "../../components/total-order";
 import locations, { cars } from "./consts";
-import "./index.scss";
 import OrderConfirmation from "../../components/order-confirmation";
+import stepChange from "../../store/actions/steps";
+import "./index.scss";
 
 function MakeOrderPage() {
-  const [curStep, setCurStep] = useState(3);
-  const onStepChange = (cur) => {
-    setCurStep(cur);
-  };
+  const dispatch = useDispatch();
+  const step = useSelector((state) => state.step);
 
-  const [order, setOrder] = useState({
-    city: "Ульяновск",
-    point: "Нариманова 42",
-    selectedCar: { company: "Hyndai", model: "i30 N" },
-    color: "Любой",
-    tariff: "Поминутно",
-  });
-
-  const handleCityChange = (value) => {
-    setOrder({
-      ...order,
-      city: value,
-    });
-    return order;
+  const handleStepChange = (value) => {
+    dispatch(stepChange(value));
   };
-  const handlePointChange = (value) => {
-    setOrder({ ...order, point: value });
-  };
-  const handleCarModelChange = (car) => {
-    setOrder({ ...order, selectedCar: car });
-  };
-  const handleColorChange = (e) => {
-    setOrder({ ...order, color: e.target.value });
-  };
-
-  const handleDateChange = (date) => {
-    const duration = [];
-    if (date.asHours() >= 24) {
-      duration[0] = Math.floor(date.asDays());
-      if (date.asHours() % 24 !== 0) {
-        duration[1] = date.asHours() % 24;
-      }
-    } else {
-      duration[1] = date.asHours() % 24;
-    }
-    setOrder({ ...order, date: duration });
-  };
-  const handleTariffChange = (e) => {
-    setOrder({ ...order, tariff: e.target.value });
-  };
-  const handleServicesChange = (value) => {
-    setOrder({ ...order, services: value });
-  };
-
   return (
     <div className="page">
-      {curStep === 4 && (
+      {step === 4 && (
         <OrderConfirmation
-          toBack={() => setCurStep(3)}
-          toConform={() => setCurStep(5)}
+          toBack={() => dispatch(stepChange(3))}
+          toConform={() => dispatch(stepChange(5))}
         />
       )}
       <Sidebar isMain={false} />
@@ -78,55 +37,19 @@ function MakeOrderPage() {
               <div className="header">
                 <MainPageHeader />
               </div>
-              <Divider className="top"/>
-              <FormSteps
-                curStep={curStep}
-                onStepChange={onStepChange}
-                order={order}
-              />
-              <Divider className="bottom"/>
+              <Divider className="top" />
+              <FormSteps onStepChange={handleStepChange} />
+              <Divider className="bottom" />
             </div>
             <Row className="location-info-row">
               <Col flex="0 0 900px" className="location-form-col">
-                {curStep === 0 && (
-                  <LocationForm
-                    order={{
-                      city: order.city,
-                      points: order.points,
-                      point: order.point,
-                    }}
-                    handleCityChange={handleCityChange}
-                    handlePointChange={handlePointChange}
-                    locations={locations}
-                  />
-                )}
-                {curStep === 1 && (
-                  <CarModels
-                    cars={cars}
-                    selectedCar={order.selectedCar}
-                    handleCarModelChange={handleCarModelChange}
-                  />
-                )}
-                {curStep === 2 && (
-                  <AdditionsForm
-                    handleColorChange={handleColorChange}
-                    handleDateChange={handleDateChange}
-                    handleTariffChange={handleTariffChange}
-                    handleServicesChange={handleServicesChange}
-                    color={order.color}
-                    tariff={order.tariff}
-                    date={order.date}
-                  />
-                )}
-                {curStep === 3 && <Total />}
-                {curStep === 4 && <Total />}
+                {step === 0 && <LocationForm locations={locations} />}
+                {step === 1 && <CarModels cars={cars} />}
+                {step === 2 && <AdditionsForm />}
+                {(step === 3 || step === 4) && <Total />}
               </Col>
               <Col className="order-info-col">
-                <OrderInfo
-                  info={order}
-                  curStep={curStep}
-                  onStepChange={onStepChange}
-                />
+                <OrderInfo onStepChange={handleStepChange} />
               </Col>
             </Row>
           </Col>

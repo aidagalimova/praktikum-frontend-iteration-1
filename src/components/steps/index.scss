@@ -35,6 +35,12 @@
         color: var(--main-accent) !important;
     }
 }
+.ant-steps
+    .ant-steps-item:not(.ant-steps-item-active)
+    > .ant-steps-item-container[role="button"]
+    .ant-steps-item-title {
+    color: var(--main-black);
+}
 @media (max-width: 470px) {
     .steps {
         display: flex;
