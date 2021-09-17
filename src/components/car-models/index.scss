@@ -2,6 +2,7 @@
     height: calc(100vh - 222px);
     width: 740px;
     align-content: flex-start;
+    overflow-y: auto;
 }
 ::-webkit-scrollbar {
     width: 4px;
@@ -17,7 +18,9 @@
     border-radius: 2px;
     background-clip: content-box;
 }
-
+.ant-spin-dot-item {
+    background-color: var(--main-accent);
+}
 @media (max-width: 1240px) {
     .cars-row {
         width: 584px;
@@ -25,7 +28,7 @@
 }
 @media (max-width: 1024px) {
     .cars-row {
-        width: 484px
+        width: 484px;
     }
 }
 
