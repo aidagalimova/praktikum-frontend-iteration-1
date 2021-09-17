@@ -10,6 +10,8 @@ const initialState = {
   },
   duration: [],
   services: null,
+  priceMax: null,
+  priceMin: null
 };
 export default function orderInfoReducer(state = initialState, action) {
   switch (action.type) {
@@ -64,6 +66,12 @@ export default function orderInfoReducer(state = initialState, action) {
         ...state,
         color: "Любой",
         tariff: "Поминутно",
+      };
+    case "SET_PRICE":
+      return {
+        ...state,
+        priceMin: action.payload.priceMin,
+        priceMax: action.payload.priceMax
       };
     default:
       return state;
