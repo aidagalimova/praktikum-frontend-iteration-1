@@ -147,10 +147,8 @@
     }
 }
 @media (max-width: 470px) {
-    .page .content-col .steps-div {
-        .bottom {
-            top: 180px;
-        }
+    .page .content-col .steps-div .bottom {
+        top: 180px !important;
     }
 }
 

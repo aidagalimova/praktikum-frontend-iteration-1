@@ -10,14 +10,14 @@ import NextButton from "./next-button";
 function OrderInfo({ onStepChange }) {
   const info = useSelector((state) => state.order);
   const curStep = useSelector((state) => state.step);
- 
+
   return (
     <div className="info-div">
       <h2 className="title medium">Ваш заказ:</h2>
       <LocationInfo info={info} />
-      <CarModelInfo info={info} />
+      <CarModelInfo />
       <AdditionsInfo info={info} curStep={curStep} />
-      <PriceInfo info={info} />
+      <PriceInfo />
       {curStep === 0 && (
         <NextButton
           btnText="Выбрать модель"
