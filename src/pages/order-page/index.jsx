@@ -36,7 +36,7 @@ function OrderPage() {
                 <Total />
               </Col>
               <Col className="order-info-col">
-                <OrderInfo info={order} isOrderPage />
+                <OrderInfo info={order} />
               </Col>
             </Row>
           </Col>

@@ -1,16 +1,24 @@
+/* eslint-disable no-unused-vars */
+
 import React from "react";
 import { Form, Select } from "antd";
+import { useDispatch, useSelector } from "react-redux";
 import map from "../../assets/image/map.png";
+import { cityChange, pointChange } from "../../store/actions/order-info";
 import "./index.scss";
 
 const { Option } = Select;
 
-function LocationForm({
-  order,
-  handleCityChange,
-  handlePointChange,
-  locations,
-}) {
+function LocationForm({ locations }) {
+  const dispatch = useDispatch();
+  const {point, city} = useSelector((state) => state.order);
+
+  const handleCityChange = (value) => {
+    dispatch(cityChange(value));
+  };
+  const handlePointChange = (value) => {
+    dispatch(pointChange(value));
+  };
   const cities = () =>
     locations.map((location) => (
       <Option key={location.id} value={location.city}>
@@ -19,9 +27,9 @@ function LocationForm({
     ));
 
   const points = () =>
-    locations[0].points.map((point) => (
-      <Option key={point.id} value={point.name}>
-        {point.name}
+    locations[0].points.map((p) => (
+      <Option key={p.id} value={p.name}>
+        {p.name}
       </Option>
     ));
   return (
@@ -35,7 +43,7 @@ function LocationForm({
             placeholder="Выберите город..."
             className="input city"
             onChange={handleCityChange}
-            value={order.city}
+            value={city}
             filterOption={(input, option) =>
               option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
             }
@@ -52,7 +60,7 @@ function LocationForm({
             placeholder="Начните вводить пункт..."
             className="input"
             onChange={handlePointChange}
-            value={order.point}
+            value={point}
             filterOption={(input, option) =>
               option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
             }
