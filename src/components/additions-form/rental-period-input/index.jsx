@@ -31,8 +31,7 @@ function RentalPeriodInput() {
         duration[1] = dateDuration.asHours() % 24;
       }
     }
-    if (duration[0] > 0 || duration[1] > 0)
-      dispatch(dateDuartionChange(duration));
+    dispatch(dateDuartionChange(duration));
   };
 
   function disabledStartDate(current) {
