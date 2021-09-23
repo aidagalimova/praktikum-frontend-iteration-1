@@ -60,10 +60,19 @@ export const servicesChange = (value) => ({
   },
 });
 
-export const PriceSet = (min, max) => ({
+export const priceSet = (min, max) => ({
   type: "SET_PRICE",
   payload: {
     priceMin: min,
     priceMax: max
   },
 });
+
+export const totalPriceSet = (total) => ({
+  type: "SET_TOTAL_PRICE",
+  payload: {
+    totalPrice: total
+  }
+})
+
+
