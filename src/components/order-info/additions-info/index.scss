@@ -27,6 +27,9 @@
         }
         .right {
             color: var(--main-dark-gray);
+            &::first-letter {
+                text-transform: uppercase;
+            }
         }
         .days {
             margin-right: -56px;
@@ -34,12 +37,12 @@
     }
 }
 @media (max-width: 1440px) {
-    .additions-divs .addition-div .days{
+    .additions-divs .addition-div .days {
         margin-right: -32px;
     }
 }
 @media (max-width: 1240px) {
-    .additions-divs .addition-div .days{
+    .additions-divs .addition-div .days {
         margin-right: -16px;
     }
 }
