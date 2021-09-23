@@ -5,9 +5,9 @@ import { useSelector } from "react-redux";
 
 const { Step } = Steps;
 
-function FormSteps({onStepChange }) {
-  const order = useSelector(state => state.order);
-  const curStep = useSelector(state => state.step)
+function FormSteps({ onStepChange }) {
+  const order = useSelector((state) => state.order);
+  const curStep = useSelector((state) => state.step);
 
   return (
     <div>
@@ -40,7 +40,10 @@ function FormSteps({onStepChange }) {
           className="step bold"
           icon={<></>}
           title="Итого"
-          disabled={curStep <= 3 && !order.duration.length}
+          disabled={
+            curStep <= 3 &&
+            (!order.duration.length || !order.tariff || !order.color)
+          }
         />
       </Steps>
     </div>

@@ -45,10 +45,11 @@ export const dateChange = (dateStart, dateEnd) => ({
   },
 });
 
-export const tariffChange = (value) => ({
+export const tariffChange = (value, id) => ({
   type: "CHANGE_TARIFF",
   payload: {
     tariff: value,
+    tariffId: id
   },
 });
 
@@ -57,9 +58,6 @@ export const servicesChange = (value) => ({
   payload: {
     services: value,
   },
-});
-export const colorAndTariffSet = () => ({
-  type: "SET_COLOR_AND_TARIFF",
 });
 
 export const PriceSet = (min, max) => ({

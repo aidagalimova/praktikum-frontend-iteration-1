@@ -12,8 +12,6 @@ function OrderPage() {
     point: "Нариманова 42",
     selectedCar: { company: "Hyndai", model: "i30 N" },
     date: [1, 2],
-    color: "Любой",
-    tariff: "Поминутно",
   };
 
   return (
