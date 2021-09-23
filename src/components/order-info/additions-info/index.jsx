@@ -35,7 +35,9 @@ function AdditionsInfo({ info }) {
           <div className="addition-div">
             <h3 className="text date light">Тариф </h3>
             <div className="dots" />
-            <h3 className="text light right">{info.tariff.rateTypeId.name}</h3>
+            <h3 className="text light right">
+              {JSON.parse(info.tariff).rateTypeId.name}
+            </h3>
           </div>
         )}
         {info.services && (
