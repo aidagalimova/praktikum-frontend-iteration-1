@@ -6,35 +6,31 @@ import { colorChange } from "../../../store/actions/order-info";
 
 function ColorRadios() {
   const dispatch = useDispatch();
+  const colors = useSelector((state) => state.order.selectedCar.colors);
   const radioValue = useSelector((state) => state.order.color);
+
   const handleColorChange = (e) => {
     dispatch(colorChange(e.target.value));
   };
-  return (
-    <div className="color-radios-div">
-      <Radio.Group
-        onChange={handleColorChange}
-        value={radioValue}
-        defaultValue="Любой"
-      >
-        <Radio value="Любой">
-          <h3 className={`radio-text ${radioValue === "all" ? "black" : ""}`}>
-            Любой
-          </h3>
-        </Radio>
-        <Radio value="Красный">
-          <h3 className={`radio-text ${radioValue === "red" ? "black" : ""}`}>
-            Красный
-          </h3>
-        </Radio>
-        <Radio value="Голубой">
-          <h3 className={`radio-text ${radioValue === "blue" ? "black" : ""}`}>
-            Голубой
-          </h3>
-        </Radio>
-      </Radio.Group>
-    </div>
-  );
+
+  function Color({ color }) {
+    return (
+      <Radio value={color}>
+        <h3 className={`radio-text `}>{color}</h3>
+      </Radio>
+    );
+  }
+
+  if (colors) {
+    const Colors = colors.map((color) => <Color key={color} color={color} />);
+    return (
+      <div className="color-radios-div">
+        <Radio.Group onChange={handleColorChange} value={radioValue}>
+          {Colors}
+        </Radio.Group>
+      </div>
+    );
+  }
 }
 
 export default ColorRadios;

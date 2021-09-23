@@ -1,38 +1,44 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Radio } from "antd";
 import { tariffChange } from "../../../store/actions/order-info";
 import "./index.scss";
+import getTariffs from "../../../services/tariffs";
 
 function TariffRadios() {
   const dispatch = useDispatch();
+  const tariffs = useSelector((state) => state.tariffs);
   const radioValue = useSelector((state) => state.order.tariff);
+  useEffect(() => {
+    dispatch(getTariffs());
+  }, []);
 
   const handleTariffChange = (e) => {
     dispatch(tariffChange(e.target.value));
   };
-  return (
-    <div className="tariff-radios-div">
-      <Radio.Group
-        onChange={handleTariffChange}
-        value={radioValue}
-        defaultValue="Поминутно"
-      >
-        <Radio className="radio " value="Поминутно">
-          <h3
-            className={`radio-text ${radioValue === "minute" ? "black" : ""}`}
-          >
-            Поминутно, 7₽/мин
-          </h3>
-        </Radio>
-        <Radio value="На сутки">
-          <h3 className={`radio-text ${radioValue === "day" ? "black" : ""}`}>
-            На сутки, 1999 ₽/сутки
-          </h3>
-        </Radio>
-      </Radio.Group>
-    </div>
-  );
-}
 
+  function Tariff({ tariff }) {
+    return (
+      <Radio className="radio " value={tariff}>
+        <h3 className="radio-text">
+          {tariff.rateTypeId.name}, {tariff.price}₽/{tariff.rateTypeId.unit}
+        </h3>
+      </Radio>
+    );
+  }
+
+  if (tariffs) {
+    const Tariffs = tariffs.map((tariff) => (
+      <Tariff key={tariff.id} tariff={tariff} />
+    ));
+    return (
+      <div className="tariff-radios-div">
+        <Radio.Group onChange={handleTariffChange} value={radioValue}>
+          {Tariffs}
+        </Radio.Group>
+      </div>
+    );
+  }
+  return <></>;
+}
 export default TariffRadios;
