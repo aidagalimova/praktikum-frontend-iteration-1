@@ -61,12 +61,7 @@ export default function orderInfoReducer(state = initialState, action) {
         ...state,
         services: action.payload.services,
       };
-    case "SET_COLOR_AND_TARIFF":
-      return {
-        ...state,
-        color: "Любой",
-        tariff: "Поминутно",
-      };
+   
     case "SET_PRICE":
       return {
         ...state,

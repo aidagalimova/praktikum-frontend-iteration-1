@@ -58,9 +58,6 @@ export const servicesChange = (value) => ({
     services: value,
   },
 });
-export const colorAndTariffSet = () => ({
-  type: "SET_COLOR_AND_TARIFF",
-});
 
 export const PriceSet = (min, max) => ({
   type: "SET_PRICE",
