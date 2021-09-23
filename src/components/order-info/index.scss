@@ -23,6 +23,11 @@
         .location-divs .dots {
             width: 20%;
         }
+        .car-model-div {
+            .dots {
+                width: 20%;
+            }
+        }
     }
 }
 
@@ -32,7 +37,7 @@
         width: 276px;
         .car-model-div {
             .dots {
-                width: 20%;
+                width: 12%;
             }
         }
     }

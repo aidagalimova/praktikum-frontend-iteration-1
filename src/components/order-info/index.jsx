@@ -39,7 +39,7 @@ function OrderInfo({ onStepChange }) {
       {curStep === 2 && (
         <NextButton
           btnText="Итого"
-          info={info.duration.length !== 0}
+          info={info.duration.length !== 0 && info.tariff && info.color}
           onStepChange={() => {
             onStepChange(3);
           }}
