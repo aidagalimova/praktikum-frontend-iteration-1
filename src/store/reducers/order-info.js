@@ -43,6 +43,7 @@ export default function orderInfoReducer(state = initialState, action) {
       return {
         ...state,
         tariff: action.payload.tariff,
+        tariffId: action.payload.tariffId
       };
 
     case "CHANGE_DATE_DURATION":
@@ -61,7 +62,7 @@ export default function orderInfoReducer(state = initialState, action) {
         ...state,
         services: action.payload.services,
       };
-   
+
     case "SET_PRICE":
       return {
         ...state,

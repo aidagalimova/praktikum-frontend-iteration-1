@@ -12,14 +12,12 @@ function TariffRadios() {
   useEffect(() => {
     dispatch(getTariffs());
   }, []);
-
   const handleTariffChange = (e) => {
     dispatch(tariffChange(e.target.value));
   };
-
   function Tariff({ tariff }) {
     return (
-      <Radio className="radio " value={tariff}>
+      <Radio className="radio " value={JSON.stringify(tariff)}>
         <h3 className="radio-text">
           {tariff.rateTypeId.name}, {tariff.price}₽/{tariff.rateTypeId.unit}
         </h3>
