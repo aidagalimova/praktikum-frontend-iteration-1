@@ -61,6 +61,10 @@
     overflow-y: scroll;
 }
 
+.rc-virtual-list-scrollbar-thumb {
+    background: none !important;
+}
+
 ::-webkit-scrollbar {
     width: 4px;
     background: white;

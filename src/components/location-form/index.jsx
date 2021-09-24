@@ -37,21 +37,25 @@ function LocationForm() {
         {p.name}
       </Option>
     ));
+
+  const props = {
+    bordered: false,
+    suffixIcon: null,
+    showSearch: true,
+    filterOption: (input, option) =>
+      option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0,
+  };
   return (
     <>
       <Form>
         <Form.Item className="city-item light" label="Город">
           <Select
-            bordered={false}
-            suffixIcon={null}
-            showSearch
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...props}
             placeholder="Выберите город..."
             className="input city"
             onChange={handleCityChange}
             value={city}
-            filterOption={(input, option) =>
-              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-            }
           >
             {citiesEls()}
           </Select>
@@ -59,17 +63,13 @@ function LocationForm() {
 
         <Form.Item className="point-item light" label="Пункт выдачи">
           <Select
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...props}
             disabled={city === null}
-            bordered={false}
-            suffixIcon={null}
-            showSearch
             placeholder="Начните вводить пункт..."
             className="input"
             onChange={handlePointChange}
             value={point}
-            filterOption={(input, option) =>
-              option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-            }
           >
             {pointsEls()}
           </Select>
