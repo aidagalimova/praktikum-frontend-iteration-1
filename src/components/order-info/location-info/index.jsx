@@ -11,8 +11,12 @@ function LocationInfo({ info }) {
         <>
           <div className="dots" />
           <div className="location-div">
-            <h3 className="location-text light">{info.city}</h3>
-            <h3 className="location-text light">{info.point}</h3>
+            <h3 className="location-text light">
+              {JSON.parse(info.city).name},
+            </h3>
+            <h3 className="location-text light">
+              {JSON.parse(info.point).name}
+            </h3>
           </div>
         </>
       )}
