@@ -26,7 +26,6 @@ function MakeOrderPage() {
       {step === 4 && (
         <OrderConfirmation
           toBack={() => dispatch(stepChange(3))}
-          toConform={() => dispatch(stepChange(5))}
         />
       )}
       <Sidebar isMain={false} />
@@ -38,7 +37,7 @@ function MakeOrderPage() {
                 <MainPageHeader />
               </div>
               <Divider className="top" />
-              <FormSteps onStepChange={handleStepChange}/>
+              <FormSteps onStepChange={handleStepChange} />
               <Divider className="bottom" />
             </div>
             <Row className="location-info-row">
