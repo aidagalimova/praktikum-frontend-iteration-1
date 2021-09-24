@@ -5,6 +5,7 @@ import "./index.scss";
 
 function Total() {
   const order = useSelector((state) => state.order);
+  console.log(order);
   return (
     <div className="car">
       <div className="car-text">
@@ -15,7 +16,7 @@ function Total() {
           </h3>
         </div>
         <div className="discription">
-          {order.selectedCar.tank && (
+          {order.selectedCar.tank !== undefined && (
             <>
               <h3 className="discription-text bold">Топливо&nbsp;</h3>
               <h3 className="discription-text light">
