@@ -44,7 +44,9 @@ function AdditionsInfo({ info }) {
           <>
             {info.services.map((service) => (
               <div key={service} className="addition-div">
-                <h3 className="text date light">{`${service}`} </h3>
+                <h3 className="text date light">
+                  {`${service.split(",")[0]}`}
+                </h3>
                 <div className="dots" />
                 <h3 className="text light right">Да</h3>
               </div>

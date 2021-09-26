@@ -1,8 +1,14 @@
 import { Button } from "antd";
 import React from "react";
+import { useSelector } from "react-redux";
+import sendOrder from "../../services/order";
 import "./index.scss";
 
-function OrderConfirmation({ toBack, toConfirm }) {
+function OrderConfirmation({ toBack }) {
+  const order = useSelector((state) => state.order);
+  const toConfirm = () => {
+    sendOrder(order);
+  };
   return (
     <div className="modal-div">
       <div className="modal-content">

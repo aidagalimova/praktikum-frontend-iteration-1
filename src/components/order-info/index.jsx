@@ -1,16 +1,53 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import moment from "moment";
 import LocationInfo from "./location-info";
 import CarModelInfo from "./car-model-info";
 import AdditionsInfo from "./additions-info";
 import PriceInfo from "./price-info";
-import "./index.scss";
 import NextButton from "./next-button";
+import "./index.scss";
+import { totalPriceSet } from "../../store/actions/order-info";
 
 function OrderInfo({ onStepChange }) {
+  const dispatch = useDispatch();
   const info = useSelector((state) => state.order);
   const curStep = useSelector((state) => state.step);
 
+  useEffect(() => {
+    if (info.tariff && info.date.start && info.date.end) {
+      const tariff = JSON.parse(info.tariff);
+      let dur = moment.duration(
+        info.date.end.diff(info.date.start.startOf("hour"))
+      );
+      let servicesPrice = 0;
+      switch (tariff.rateTypeId.unit) {
+        case "мин":
+          dur = dur.asMinutes();
+          break;
+        case "сутки":
+          dur = Math.ceil(dur.asDays());
+          break;
+        case "7 дней":
+          dur = Math.ceil(dur.asWeeks());
+          break;
+        case "30 дней":
+          dur = Math.ceil(dur.asMonths());
+          break;
+        default:
+          dur = 0;
+      }
+      if (info.services) {
+        // eslint-disable-next-line no-plusplus
+        for (let i = 0; i < info.services.length; i++) {
+          servicesPrice += parseInt(info.services[i].split(",")[1], 10);
+        }
+      }
+      dispatch(
+        totalPriceSet(info.priceMin + dur * tariff.price + servicesPrice)
+      );
+    } else dispatch(totalPriceSet(0));
+  }, [info.tariff, info.date, info.services]);
   return (
     <div className="info-div">
       <h2 className="title medium">Ваш заказ:</h2>
