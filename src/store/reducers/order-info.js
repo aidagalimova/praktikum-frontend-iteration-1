@@ -11,7 +11,8 @@ const initialState = {
   duration: [],
   services: null,
   priceMax: null,
-  priceMin: null
+  priceMin: null,
+  totalPrice: 0
 };
 export default function orderInfoReducer(state = initialState, action) {
   switch (action.type) {
@@ -69,6 +70,11 @@ export default function orderInfoReducer(state = initialState, action) {
         priceMin: action.payload.priceMin,
         priceMax: action.payload.priceMax
       };
+    case "SET_TOTAL_PRICE":
+      return {
+        ...state,
+        totalPrice: action.payload.totalPrice
+      }
     default:
       return state;
   }

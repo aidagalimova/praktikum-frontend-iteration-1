@@ -36,6 +36,10 @@
             }
         }
     }
+
+    &-img .img {
+        width: 256px;
+    }
 }
 
 @media (max-width: 888px) {

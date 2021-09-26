@@ -34,7 +34,7 @@ function FormSteps({ onStepChange }) {
           className="step bold"
           icon={<></>}
           title="Дополнительно"
-          disabled={curStep <= 2 && !order.selectedCar}
+          disabled={curStep <= 2 && (!order.selectedCar || !order.point)}
         />
         <Step
           className="step bold"
@@ -42,7 +42,11 @@ function FormSteps({ onStepChange }) {
           title="Итого"
           disabled={
             curStep <= 3 &&
-            (!order.duration.length || !order.tariff || !order.color)
+            (!order.duration.length ||
+              !order.tariff ||
+              !order.color ||
+              !order.point ||
+              !order.selectedCar)
           }
         />
       </Steps>

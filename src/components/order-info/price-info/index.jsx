@@ -3,7 +3,9 @@ import { useSelector } from "react-redux";
 import "./index.scss";
 
 function PriceInfo() {
-  const { priceMin, priceMax } = useSelector((state) => state.order);
+  const { priceMin, priceMax, totalPrice } = useSelector(
+    (state) => state.order
+  );
 
   return (
     <div className="price-div">
@@ -12,9 +14,14 @@ function PriceInfo() {
       </div>
       <div className="price-dots " />
       <div>
-        <h3 className="price regular">
-          {priceMin ? `${priceMin} - ${priceMax} ₽` : "0 ₽"}
-        </h3>
+        {(totalPrice !== 0 && (
+          <h3 className="price regular">{totalPrice} ₽</h3>
+        )) ||
+          (priceMin && (
+            <h3 className="price regular">
+              {priceMin} - {priceMax} ₽
+            </h3>
+          )) || <h3 className="price regular">0 ₽</h3>}
       </div>
     </div>
   );

@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   carModelChange,
   colorChange,
-  PriceSet,
+  priceSet,
+  tariffChange,
+  totalPriceSet,
 } from "../../store/actions/order-info";
 import "./index.scss";
 
@@ -15,8 +17,10 @@ function CarModel({ car }) {
 
   const handleCarModelChange = (value) => {
     dispatch(carModelChange(value));
-    dispatch(PriceSet(value.priceMin, value.priceMax));
+    dispatch(priceSet(value.priceMin, value.priceMax));
     dispatch(colorChange(null));
+    dispatch(tariffChange(null));
+    dispatch(totalPriceSet(0));
   };
   return (
     <Card

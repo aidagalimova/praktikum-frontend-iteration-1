@@ -17,7 +17,8 @@ export default function getAllCars() {
                     priceMin: data.priceMin,
                     number: data.number,
                     colors: data.colors,
-                    img: data.thumbnail
+                    img: data.thumbnail,
+                    tank: data.tank
                 }));
                 dispatch(setAllCars(cars));
             });
