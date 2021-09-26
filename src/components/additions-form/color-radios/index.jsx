@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Radio } from "antd";
 import "./index.scss";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +9,9 @@ function ColorRadios() {
   const colors = useSelector((state) => state.order.selectedCar.colors);
   const radioValue = useSelector((state) => state.order.color);
 
+  useEffect(() => {
+    if (!radioValue) dispatch(colorChange(colors[0]));
+  }, []);
   const handleColorChange = (e) => {
     dispatch(colorChange(e.target.value));
   };

@@ -5,7 +5,6 @@ import "./index.scss";
 
 function Total() {
   const order = useSelector((state) => state.order);
-  console.log(order);
   return (
     <div className="car">
       <div className="car-text">
