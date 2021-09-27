@@ -24,9 +24,7 @@ function MakeOrderPage() {
   return (
     <div className="page">
       {step === 4 && (
-        <OrderConfirmation
-          toBack={() => dispatch(stepChange(3))}
-        />
+        <OrderConfirmation toBack={() => dispatch(stepChange(3))} />
       )}
       <Sidebar isMain={false} />
       <div className="page-content">
@@ -45,10 +43,10 @@ function MakeOrderPage() {
                 {step === 0 && <LocationForm locations={locations} />}
                 {step === 1 && <CarModels />}
                 {step === 2 && <AdditionsForm />}
-                {(step === 3 || step === 4) && <Total />}
+                {(step === 3 || step === 4) && <Total isMakePage />}
               </Col>
               <Col className="order-info-col">
-                <OrderInfo onStepChange={handleStepChange} />
+                <OrderInfo onStepChange={handleStepChange} isMakeOrder />
               </Col>
             </Row>
           </Col>
