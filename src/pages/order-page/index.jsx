@@ -16,6 +16,18 @@ function OrderPage({ match }) {
     dispatch(getOrder(match.params.id));
   }, []);
   if (order.color) {
+    let text;
+    switch (order.orderStatusId.name) {
+      case "Отмененые":
+        text = "Ваш заказ отменён";
+        break;
+      case "Подтвержденные":
+        text = "Ваш заказ подтверждён";
+        break;
+      default:
+        text = "Ваш заказ еще не подтверждён";
+    }
+
     return (
       <div className="page">
         <Sidebar isMain={false} />
@@ -34,18 +46,7 @@ function OrderPage({ match }) {
               </div>
               <Row className="location-info-row">
                 <Col flex="0 0 900px" className="location-form-col">
-                  {(order.orderStatusId.name === "Отмененые" && (
-                    <h2 className="title-text regular">Ваш заказ отменён</h2>
-                  )) ||
-                    (order.orderStatusId.name === "Подтвержденные" && (
-                      <h2 className="title-text regular">
-                        Ваш заказ подтверждён
-                      </h2>
-                    )) || (
-                      <h2 className="title-text regular">
-                        Ваш заказ еще не подтверждён
-                      </h2>
-                    )}
+                  <h2 className="title-text regular">{text}</h2>
                   <Total isMakePage={false} />
                 </Col>
                 <Col className="order-info-col">
