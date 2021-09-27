@@ -34,10 +34,10 @@ function OrderPage({ match }) {
               </div>
               <Row className="location-info-row">
                 <Col flex="0 0 900px" className="location-form-col">
-                  {(order.status.name === "Отмененые" && (
+                  {(order.orderStatusId.name === "Отмененые" && (
                     <h2 className="title-text regular">Ваш заказ отменён</h2>
                   )) ||
-                    (order.status.name === "Подтвержденные" && (
+                    (order.orderStatusId.name === "Подтвержденные" && (
                       <h2 className="title-text regular">
                         Ваш заказ подтверждён
                       </h2>

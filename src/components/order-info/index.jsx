@@ -9,12 +9,12 @@ import PriceInfo from "./price-info";
 import NextButton from "./next-button";
 import "./index.scss";
 import { totalPriceSet } from "../../store/actions/order-info";
+import { cancelOrder } from "../../services/order";
 
 function OrderInfo({ onStepChange, isMakeOrder }) {
   const dispatch = useDispatch();
   const info = useSelector((state) => state.order);
   const curStep = useSelector((state) => state.step);
-
   useEffect(() => {
     if (isMakeOrder) {
       if (info.tariff && info.date.start && info.date.end) {
@@ -101,9 +101,13 @@ function OrderInfo({ onStepChange, isMakeOrder }) {
           )}
         </>
       ) : (
-        <Button className="btn cancel">
-          <h3 className="btn-text">Отменить</h3>
-        </Button>
+        <>
+          {info.orderStatusId && info.orderStatusId.name !== "Отмененые" && (
+            <Button className="btn cancel " onClick={() => cancelOrder(info)}>
+              <h3 className="btn-text">Отменить</h3>
+            </Button>
+          )}
+        </>
       )}
     </div>
   );

@@ -78,7 +78,7 @@ export const totalPriceSet = (total) => ({
 
 export const orderSet = (
   city, point, selectedCar, color, tariff,
-  dateFrom, dateTo, services, totalPrice, number, status) => ({
+  dateFrom, dateTo, services, totalPrice, number, orderStatusId, id) => ({
     type: "SET_ORDER",
     payload: {
       city,
@@ -96,7 +96,8 @@ export const orderSet = (
       priceMin: null,
       totalPrice,
       number,
-      status
+      orderStatusId,
+      id
     }
   })
 
