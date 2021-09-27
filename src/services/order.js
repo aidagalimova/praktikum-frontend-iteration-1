@@ -1,4 +1,8 @@
+import moment from "moment";
 import api from "../axios/api";
+import {
+    orderSet
+} from "../store/actions/order-info";
 
 async function getOrderStatusId() {
     const apiUrl = "/db/orderStatus";
@@ -19,8 +23,8 @@ export default async function sendOrder(order) {
         },
         carId: order.selectedCar.id,
         color: order.color,
-        dateFrom: order.date.start.format("DD.MM.YYYY HH:mm"),
-        dateTo: order.date.end.format("DD.MM.YYYY HH:mm"),
+        dateFrom:  moment(order.date.start).format("DD.MM.YYYY HH:mm"),
+        dateTo:  moment(order.date.end).format("DD.MM.YYYY HH:mm"),
         rateId: JSON.parse(order.tariff).id,
         price: order.totalPrice,
         isFullTank: order.services.includes("Полный бак, 500р"),
@@ -28,6 +32,34 @@ export default async function sendOrder(order) {
         isRightWheel: order.services.includes("Правый руль, 1600р")
     };
     api.post(apiUrl, orderInfo).then((resp) => {
-        console.log(resp);
+        window.location.replace(`/${resp.data.data.id}`);
     });
+}
+
+export function getOrder(id) {
+    const apiUrl = `/db/order/${id}`;
+    return (dispatch) => {
+        api.get(apiUrl)
+            .then((resp) => {
+                const order = resp.data.data;
+                const services = order.isFullTank ? ["Полный бак, 500р"] : [];
+                if (order.isNeedChildChair)
+                    services.push("Детское кресло, 200р");
+                if (order.isRightWheel)
+                    services.push("Правый руль, 1600р");
+                dispatch(orderSet(
+                    JSON.stringify(order.cityId),
+                    JSON.stringify(order.pointId),
+                    order.carId,
+                    order.color,
+                    JSON.stringify(order.rateId),
+                    order.dateFrom,
+                    order.dateTo,
+                    services,
+                    order.price,
+                    order.updatedAt,
+                    order.orderStatusId
+                ))
+            })
+    }
 }
