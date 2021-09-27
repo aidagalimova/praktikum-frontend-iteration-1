@@ -16,7 +16,6 @@ function OrderPage({ match }) {
     dispatch(getOrder(match.params.id));
   }, []);
   if (order.color) {
-    console.log(order);
     return (
       <div className="page">
         <Sidebar isMain={false} />
