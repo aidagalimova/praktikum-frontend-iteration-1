@@ -75,6 +75,8 @@ export default function orderInfoReducer(state = initialState, action) {
         ...state,
         totalPrice: action.payload.totalPrice
       }
+    case "SET_ORDER":
+      return action.payload
     default:
       return state;
   }
