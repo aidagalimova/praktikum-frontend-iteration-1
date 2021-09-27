@@ -42,24 +42,30 @@ export function getOrder(id) {
         api.get(apiUrl)
             .then((resp) => {
                 const order = resp.data.data;
-                const services = order.isFullTank ? ["Полный бак, 500р"] : [];
+                const serv = order.isFullTank ? ["Полный бак, 500р"] : [];
                 if (order.isNeedChildChair)
-                    services.push("Детское кресло, 200р");
+                    serv.push("Детское кресло, 200р");
                 if (order.isRightWheel)
-                    services.push("Правый руль, 1600р");
-                dispatch(orderSet(
-                    JSON.stringify(order.cityId),
-                    JSON.stringify(order.pointId),
-                    order.carId,
-                    order.color,
-                    JSON.stringify(order.rateId),
-                    order.dateFrom,
-                    order.dateTo,
-                    services,
-                    order.price,
-                    order.updatedAt,
-                    order.orderStatusId,
-                    order.id
+                    serv.push("Правый руль, 1600р");
+                dispatch(orderSet({
+                    city: JSON.stringify(order.cityId),
+                    point: JSON.stringify(order.pointId),
+                    selectedCar: order.carId,
+                    color: order.color,
+                    rateId: JSON.stringify(order.rateId),
+                    date: {
+                        start: order.dateFrom,
+                        end: order.dateTo,
+                    },
+                    duration: [order.dateFrom - order.dateTo],
+                    services: serv,
+                    maxPrice: null,
+                    minPrice: null,
+                    totalPrice: order.price,
+                    number: order.updatedAt,
+                    orderStatusId: order.orderStatusId,
+                    id: order.id
+                }
                 ))
             })
     }
