@@ -13,7 +13,7 @@ function Routing() {
     <Router>
       <Switch>
         <Route path="/" component={MakeOrderPage} exact />
-        <Route path="/order" component={OrderPage} exact />
+        <Route path="/:id" component={OrderPage} exact />
         <Redirect to="/" />
       </Switch>
     </Router>
