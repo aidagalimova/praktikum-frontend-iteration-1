@@ -37,9 +37,9 @@ function CarModel({ car }) {
         cover={
           <img
             src={
-              car.img.path[0] === "d"
-                ? car.img.path
-                : `https://api-factory.simbirsoft1.com/${car.img.path}`
+              car.thumbnail.path[0] === "d"
+                ? car.thumbnail.path
+                : `https://api-factory.simbirsoft1.com/${car.thumbnail.path}`
             }
             alt="car"
           />

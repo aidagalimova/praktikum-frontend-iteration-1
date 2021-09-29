@@ -45,11 +45,10 @@ export const dateChange = (dateStart, dateEnd) => ({
   },
 });
 
-export const tariffChange = (value, id) => ({
+export const tariffChange = (value) => ({
   type: "CHANGE_TARIFF",
   payload: {
-    tariff: value,
-    tariffId: id
+    rateId: value
   },
 });
 
@@ -75,4 +74,9 @@ export const totalPriceSet = (total) => ({
   }
 })
 
+
+export const orderSet = (order) => ({
+  type: "SET_ORDER",
+  payload: order
+})
 
