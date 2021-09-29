@@ -11,11 +11,10 @@
         text-align: right;
         margin-bottom: 32px;
     }
-    .cancel {
-        background: linear-gradient(90deg, #493013 0%, #7b0c3b 100%);
+    .btn.cancel {
+        background: linear-gradient(90deg, #493013 0%, #7b0c3b 100%) !important;
     }
 }
-
 @media (max-width: 1440px) {
     .info-div {
         margin-right: 32px;

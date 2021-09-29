@@ -2,7 +2,7 @@ const initState = {
     cities: [],
     points: []
 }
-export default function LocationsReducer(state = initState, action) {
+export default function locationsReducer(state = initState, action) {
     switch (action.type) {
         case "SET_CITIES":
             return {
