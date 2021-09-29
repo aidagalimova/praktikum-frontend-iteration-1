@@ -9,11 +9,11 @@ async function getOrderStatusId(num) {
     const resp = await api.get(apiUrl);
     return resp.data.data[num].id;
 }
-export default async function sendOrder(order) {
-    const apiUrl = "/db/order";
-    const orderInfo = {
+
+async function getOrderObj(order, statusNum) {
+    const orderObj = {
         orderStatusId: {
-            id: await getOrderStatusId(0)
+            id: await getOrderStatusId(statusNum)
         },
         cityId: {
             id: JSON.parse(order.city).id
@@ -25,15 +25,18 @@ export default async function sendOrder(order) {
         color: order.color,
         dateFrom: moment(order.date.start).format("DD.MM.YYYY HH:mm"),
         dateTo: moment(order.date.end).format("DD.MM.YYYY HH:mm"),
-        rateId: JSON.parse(order.tariff).id,
+        rateId: JSON.parse(order.rateId).id,
         price: order.totalPrice,
         isFullTank: order.services.includes("Полный бак, 500р"),
         isNeedChildChair: order.services.includes("Детское кресло, 200р"),
         isRightWheel: order.services.includes("Правый руль, 1600р")
     };
-    api.post(apiUrl, orderInfo).then((resp) => {
-        window.location.replace(`/${resp.data.data.id}`);
-    });
+    return orderObj;
+}
+export default async function sendOrder(order) {
+    const apiUrl = "/db/order";
+    const orderInfo = await getOrderObj(order, 0);
+    api.post(apiUrl, orderInfo).then((resp) => window.location.replace(`/${resp.data.data.id}`));
 }
 
 export function getOrder(id) {
@@ -57,7 +60,7 @@ export function getOrder(id) {
                         start: order.dateFrom,
                         end: order.dateTo,
                     },
-                    duration: [order.dateFrom - order.dateTo],
+                    duration: [order.dateTo - order.dateFrom],
                     services: serv,
                     maxPrice: null,
                     minPrice: null,
@@ -73,26 +76,7 @@ export function getOrder(id) {
 
 export async function cancelOrder(order) {
     const apiUrl = `/db/order/${order.id}`;
-    const orderInfo = {
-        orderStatusId: {
-            id: await getOrderStatusId(2)
-        },
-        cityId: {
-            id: JSON.parse(order.city).id
-        },
-        pointId: {
-            id: JSON.parse(order.point).id
-        },
-        carId: order.selectedCar.id,
-        color: order.color,
-        dateFrom: moment(order.date.start).format("DD.MM.YYYY HH:mm"),
-        dateTo: moment(order.date.end).format("DD.MM.YYYY HH:mm"),
-        rateId: JSON.parse(order.tariff).id,
-        price: order.totalPrice,
-        isFullTank: order.services.includes("Полный бак, 500р"),
-        isNeedChildChair: order.services.includes("Детское кресло, 200р"),
-        isRightWheel: order.services.includes("Правый руль, 1600р")
-    };
+    const orderInfo = await getOrderObj(order, 2);
     api.put(apiUrl, orderInfo).then(() => {
         window.location.reload();
     });

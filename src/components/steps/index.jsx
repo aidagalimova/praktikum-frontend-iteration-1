@@ -43,7 +43,7 @@ function FormSteps({ onStepChange }) {
           disabled={
             curStep <= 3 &&
             (!order.duration.length ||
-              !order.tariff ||
+              !order.rateId ||
               !order.color ||
               !order.point ||
               !order.selectedCar)

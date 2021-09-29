@@ -8,7 +8,7 @@ import getTariffs from "../../../services/tariffs";
 function TariffRadios() {
   const dispatch = useDispatch();
   const tariffs = useSelector((state) => state.tariffs);
-  const radioValue = useSelector((state) => state.order.tariff);
+  const radioValue = useSelector((state) => state.order.rateId);
   useEffect(() => {
     dispatch(getTariffs());
   }, []);

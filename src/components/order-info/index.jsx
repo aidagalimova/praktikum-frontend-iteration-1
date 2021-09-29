@@ -17,8 +17,8 @@ function OrderInfo({ onStepChange, isMakeOrder }) {
   const curStep = useSelector((state) => state.step);
   useEffect(() => {
     if (isMakeOrder) {
-      if (info.tariff && info.date.start && info.date.end) {
-        const tariff = JSON.parse(info.tariff);
+      if (info.rateId && info.date.start && info.date.end) {
+        const tariff = JSON.parse(info.rateId);
         let dur = moment.duration(
           info.date.end.diff(info.date.start.startOf("hour"))
         );
@@ -50,7 +50,7 @@ function OrderInfo({ onStepChange, isMakeOrder }) {
         );
       } else dispatch(totalPriceSet(0));
     }
-  }, [info.tariff, info.date, info.services]);
+  }, [info.rateId, info.date, info.services]);
 
   return (
     <div className="info-div">
@@ -82,7 +82,7 @@ function OrderInfo({ onStepChange, isMakeOrder }) {
           {curStep === 2 && (
             <NextButton
               btnText="Итого"
-              info={info.duration.length !== 0 && info.tariff && info.color}
+              info={info.duration.length !== 0 && info.rateId && info.color}
               onStepChange={() => {
                 onStepChange(3);
               }}
