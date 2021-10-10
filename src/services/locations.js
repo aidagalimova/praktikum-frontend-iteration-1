@@ -16,8 +16,13 @@ export function getPoints(cityId) {
     return (dispatch) => {
         api.get(apiUrl)
             .then((resp) => {
-                const points = resp.data.data.filter((point) => point.cityId.id === cityId);
-                dispatch(setPoints(points));
+                if (cityId) {
+                    const points = resp.data.data.filter((point) => point.cityId && point.cityId.id === cityId);
+                    dispatch(setPoints(points));
+                } else {
+                    const points = resp.data.data.filter((point) => point.cityId);
+                    dispatch(setPoints(points));
+                }
             })
     }
 }

@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { Form, Select } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { cityChange, pointChange } from "../../store/actions/order-info";
-import map from "../../assets/image/map.png";
 import "./index.scss";
 import getCities, { getPoints } from "../../services/locations";
+import YMap from "../map";
 
 const { Option } = Select;
 
@@ -14,6 +14,7 @@ function LocationForm() {
   const { cities, points } = useSelector((state) => state.locations);
   useEffect(() => {
     dispatch(getCities());
+    dispatch(getPoints());
   }, []);
 
   const handleCityChange = (value) => {
@@ -37,7 +38,6 @@ function LocationForm() {
         {p.name}
       </Option>
     ));
-
   const props = {
     bordered: false,
     suffixIcon: null,
@@ -55,7 +55,7 @@ function LocationForm() {
             placeholder="Выберите город..."
             className="input city"
             onChange={handleCityChange}
-            value={city}
+            value={city && JSON.parse(city).name}
           >
             {citiesEls()}
           </Select>
@@ -77,7 +77,7 @@ function LocationForm() {
       </Form>
       <h3 className="map-text light">Выберите на карте:</h3>
       <div>
-        <img className="map-img" src={map} alt="map" />
+        <YMap />
       </div>
     </>
   );
