@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { YMaps, Map, Placemark } from "react-yandex-maps";
 import { cityChange, pointChange } from "../../store/actions/order-info";
+import pointIcon from "../../assets/svg/point.svg";
+import "./index.scss";
 
 function YMap() {
   const dispatch = useDispatch();
@@ -39,6 +41,7 @@ function YMap() {
     if (!city) dispatch(cityChange(JSON.stringify(coord.point.cityId)));
     dispatch(pointChange(JSON.stringify(coord.point)));
   }
+
   function PlacemarkEls() {
     if (city) {
       return coords.map(
@@ -48,12 +51,23 @@ function YMap() {
               key={coord.point.id}
               geometry={coord.coords}
               onClick={() => onPointClick(coord)}
+              options={{
+                iconLayout: "default#image",
+                iconImageHref: pointIcon,
+              }}
             />
           )
       );
     }
     return coords.map((coord) => (
-      <Placemark geometry={coord.coords} onClick={() => onPointClick(coord)} />
+      <Placemark
+        geometry={coord.coords}
+        onClick={() => onPointClick(coord)}
+        options={{
+          iconLayout: "default#image",
+          iconImageHref: pointIcon,
+        }}
+      />
     ));
   }
   return (
@@ -70,6 +84,8 @@ function YMap() {
           onLoad={(api) => {
             setYmaps(api);
           }}
+          style={{ width: "736px", height: "352px" }}
+          className="map"
         >
           {coords && <PlacemarkEls />}
         </Map>
