@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Button, Layout } from "antd";
 import MainPageHeader from "../header";
 import MainPageFooter from "../footer";
@@ -6,6 +7,12 @@ import "./index.scss";
 
 const { Header, Content, Footer } = Layout;
 function MainPageContent() {
+
+  const history = useHistory();
+  const routeChange = () => {
+    history.push('/order');
+  }
+
   return (
     <Layout className="main-page-content">
       <Header className="header">
@@ -17,7 +24,7 @@ function MainPageContent() {
         <h3 className="discription-text light">
           Поминутная аренда авто твоего города
         </h3>
-        <Button className="btn">
+        <Button className="btn" onClick={routeChange}>
           <h1 className="btn-text medium">Забронировать</h1>
         </Button>
       </Content>
